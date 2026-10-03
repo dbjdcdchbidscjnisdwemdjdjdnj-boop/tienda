@@ -1,3000 +1,1239 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="JT Motors - Motos, autos, camionetas, SUV y cuatrimotos.">
-<title>JT MOTORS | Premium Vehicles</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-    --bg:#070707;
-    --bg2:#101010;
-    --card:#151515;
-    --gold:#d9b56a;
-    --gold-light:#f3d99a;
-    --white:#f7f5ef;
-    --gray:#aaa69d;
-    --border:#2b2925;
-}
+  <title>JT MOTORS | Premium Vehicles</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html{
-    scroll-behavior:smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-    background:var(--bg);
-    color:var(--white);
-    font-family:Arial,Helvetica,sans-serif;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: white;
+    }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-button,
-input,
-select{
-    font:inherit;
-}
+    /* =========================
+       BARRA DE NAVEGACIÓN
+    ========================== */
 
-button{
-    cursor:pointer;
-}
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 5%;
+      background: linear-gradient(
+        rgba(0,0,0,0.75),
+        transparent
+      );
+    }
 
-/* =========================
-   HEADER
-========================= */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    transition:.3s;
-}
+    .logo-jt {
+      color: #dfb96e;
+      font-size: 38px;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -6px;
+    }
 
-header.scrolled{
-    background:rgba(5,5,5,.92);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.1);
-}
+    .logo-text strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
 
-.nav{
-    width:min(1400px,calc(100% - 40px));
-    min-height:80px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
+    .logo-text small {
+      display: block;
+      color: #aaa;
+      font-size: 8px;
+      letter-spacing: 4px;
+      margin-top: 3px;
+    }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
+    nav {
+      display: flex;
+      gap: 32px;
+    }
 
-.logo-jt{
-    font-size:32px;
-    font-weight:1000;
-    font-style:italic;
-    letter-spacing:-5px;
-    color:var(--gold);
-}
+    nav a {
+      color: #eee;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 8px 0;
+      transition: 0.3s;
+    }
 
-.logo-text strong{
-    display:block;
-    font-size:18px;
-    letter-spacing:4px;
-}
+    nav a:hover {
+      color: #dfb96e;
+      border-bottom: 2px solid #dfb96e;
+    }
 
-.logo-text span{
-    display:block;
-    font-size:8px;
-    letter-spacing:4px;
-    color:#999;
-    margin-top:4px;
-}
+    /* =========================
+       INICIO
+    ========================== */
 
-.nav-links{
-    display:flex;
-    gap:28px;
-}
+    .hero {
+      min-height: 100vh;
+      position: relative;
 
-.nav-links a{
-    font-size:12px;
-    letter-spacing:1.5px;
-    transition:.2s;
-}
+      background-image:
+        url("assets/hero-jt-motors.png");
 
-.nav-links a:hover{
-    color:var(--gold-light);
-}
+      background-size: cover;
+      background-position: center;
 
-.nav-buttons{
-    display:flex;
-    gap:8px;
-}
+      display: flex;
+      align-items: center;
+    }
 
-.icon-button{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:#0009;
-    border:1px solid #ffffff22;
-    color:var(--gold-light);
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
 
-.menu-button{
-    display:none;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    align-items:flex-end;
-    overflow:hidden;
-}
-
-.hero-image{
-    position:absolute;
-    inset:0;
-
-    background-image:
+      background:
         linear-gradient(
-            90deg,
-            rgba(0,0,0,.78),
-            rgba(0,0,0,.35),
-            rgba(0,0,0,.05)
+          90deg,
+          rgba(0,0,0,0.95) 0%,
+          rgba(0,0,0,0.72) 32%,
+          rgba(0,0,0,0.10) 75%
         ),
         linear-gradient(
-            0deg,
-            rgba(0,0,0,.85),
-            transparent 55%
-        ),
-        url("hero-jt.png");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    width:min(1400px,calc(100% - 40px));
-    margin:auto;
-    padding:170px 0 170px;
-}
-
-.hero-small{
-    color:var(--gold-light);
-    font-size:12px;
-    font-weight:bold;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.hero h1{
-    font-size:clamp(60px,9vw,125px);
-    line-height:.82;
-    letter-spacing:-7px;
-    margin:25px 0;
-}
-
-.hero h1 span{
-    color:var(--gold);
-}
-
-.hero h2{
-    font-size:clamp(16px,2vw,25px);
-    letter-spacing:3px;
-    margin-bottom:18px;
-}
-
-.hero p{
-    max-width:600px;
-    color:#ddd;
-    line-height:1.7;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:28px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 20px;
-    border-radius:10px;
-    border:1px solid transparent;
-    font-weight:bold;
-    transition:.2s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-.btn-gold{
-    background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    color:#17120a;
-}
-
-.btn-dark{
-    background:#080808aa;
-    border-color:#ffffff30;
-}
-
-/* =========================
-   HERO INFO
-========================= */
-
-.hero-info{
-    position:absolute;
-    z-index:4;
-    bottom:25px;
-    left:50%;
-    transform:translateX(-50%);
-    width:min(1240px,calc(100% - 40px));
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-
-    background:#080808d9;
-    border:1px solid #ffffff20;
-    border-radius:18px;
-    backdrop-filter:blur(15px);
-    overflow:hidden;
-}
-
-.hero-info-box{
-    padding:18px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    border-right:1px solid #ffffff18;
-}
-
-.hero-info-box:last-child{
-    border-right:none;
-}
-
-.hero-info-icon{
-    font-size:25px;
-    color:var(--gold);
-}
-
-.hero-info-box strong{
-    display:block;
-    font-size:10px;
-    letter-spacing:1px;
-}
-
-.hero-info-box small{
-    display:block;
-    color:#999;
-    font-size:9px;
-    margin-top:4px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section{
-    padding:100px 0;
-}
-
-.container{
-    width:min(1400px,calc(100% - 40px));
-    margin:auto;
-}
-
-.section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:30px;
-    margin-bottom:35px;
-}
-
-.eyebrow{
-    color:var(--gold);
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.section-title{
-    font-size:clamp(38px,5vw,60px);
-    letter-spacing:-3px;
-    margin-top:8px;
-}
-
-.section-description{
-    max-width:550px;
-    color:var(--gray);
-    line-height:1.7;
-}
-
-/* =========================
-   STATS
-========================= */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-bottom:30px;
-}
-
-.stat{
-    padding:23px;
-    background:linear-gradient(180deg,#151515,#0d0d0d);
-    border:1px solid var(--border);
-    border-radius:16px;
-}
-
-.stat strong{
-    display:block;
-    font-size:30px;
-    color:var(--gold-light);
-}
-
-.stat span{
-    display:block;
-    color:#999;
-    font-size:10px;
-    margin-top:5px;
-}
-
-/* =========================
-   FILTERS
-========================= */
-
-.filters{
-    display:grid;
-    grid-template-columns:1.5fr repeat(4,1fr) auto;
-    gap:10px;
-    margin-bottom:30px;
-}
-
-.input,
-.select{
-    width:100%;
-    padding:13px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    background:#111;
-    color:#fff;
-}
-
-.input:focus,
-.select:focus{
-    outline:1px solid var(--gold);
-}
-
-/* =========================
-   VEHICLE GRID
-========================= */
-
-.vehicle-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.vehicle-card{
-    background:linear-gradient(180deg,#151515,#0c0c0c);
-    border:1px solid var(--border);
-    border-radius:18px;
-    overflow:hidden;
-    transition:.25s;
-}
-
-.vehicle-card:hover{
-    transform:translateY(-6px);
-    border-color:#8c703e;
-    box-shadow:0 25px 60px #000;
-}
-
-.vehicle-image{
-    height:210px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #4c3b21,
-            #090909 68%
+          0deg,
+          rgba(0,0,0,0.8),
+          transparent 40%
         );
-}
+    }
 
-.vehicle-image span{
-    font-size:78px;
-    filter:drop-shadow(0 20px 20px #000);
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
 
-.vehicle-tag{
-    position:absolute;
-    top:12px;
-    left:12px;
-    background:#000b;
-    border:1px solid #ffffff20;
-    padding:6px 9px;
-    border-radius:20px;
-    font-size:10px;
-    color:var(--gold-light);
-}
+      max-width: 650px;
+      margin-left: 5%;
+      padding-top: 50px;
+    }
 
-.favorite{
-    position:absolute;
-    right:12px;
-    top:12px;
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    background:#000b;
-    border:1px solid #ffffff20;
-    color:#fff;
-}
+    .category {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #eee;
+    }
 
-.favorite.active{
-    color:#ff5570;
-}
+    .hero h1 {
+      font-size: clamp(55px, 7vw, 105px);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -5px;
+      margin: 20px 0 10px;
+    }
 
-.vehicle-content{
-    padding:17px;
-}
+    .hero h1 span {
+      color: #dfb96e;
+    }
 
-.brand{
-    color:var(--gold);
-    font-size:10px;
-    font-weight:bold;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
+    .hero h2 {
+      font-size: 17px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
 
-.vehicle-content h3{
-    margin:6px 0;
-    font-size:19px;
-}
+    .hero p {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 530px;
+    }
 
-.vehicle-meta{
-    color:#999;
-    font-size:11px;
-}
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+    }
 
-.price{
-    color:var(--gold-light);
-    font-size:21px;
-    font-weight:bold;
-    margin-top:12px;
-}
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
 
-.chips{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:12px;
-}
+    .btn-gold {
+      background: #dfb96e;
+      color: #111;
+    }
 
-.chip{
-    padding:6px 8px;
-    border:1px solid #292929;
-    border-radius:7px;
-    color:#aaa;
-    background:#171717;
-    font-size:10px;
-}
+    .btn-gold:hover {
+      background: #f1d18e;
+      transform: translateY(-2px);
+    }
 
-.card-buttons{
-    display:flex;
-    gap:8px;
-    margin-top:15px;
-}
+    .btn-outline {
+      border: 1px solid #d3ad69;
+      background: rgba(0,0,0,0.4);
+    }
 
-.card-button{
-    flex:1;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid var(--border);
-    background:#161616;
-    color:#fff;
-    font-size:11px;
-    font-weight:bold;
-}
+    .btn-outline:hover {
+      background: #dfb96e;
+      color: #111;
+    }
 
-.card-button.gold{
-    background:var(--gold);
-    color:#17120a;
-    border-color:var(--gold);
-}
+    /* =========================
+       CARACTERÍSTICAS
+    ========================== */
 
-/* =========================
-   CATEGORIES
-========================= */
+    .features {
+      width: 88%;
+      margin: -55px auto 0;
+      position: relative;
+      z-index: 10;
 
-.categories{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
 
-.category-card{
-    position:relative;
-    min-height:190px;
-    padding:25px;
-    border:1px solid var(--border);
-    border-radius:20px;
-    overflow:hidden;
-    cursor:pointer;
-    background:linear-gradient(135deg,#181818,#0b0b0b);
-    transition:.25s;
-}
+      background: rgba(10,10,10,0.94);
+      border: 1px solid #3c3224;
+      border-radius: 12px;
 
-.category-card:hover{
-    transform:translateY(-5px);
-    border-color:#8c703e;
-}
+      padding: 22px;
+    }
 
-.category-icon{
-    font-size:45px;
-}
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px 25px;
+      border-right: 1px solid #3c3224;
+    }
 
-.category-card h3{
-    margin-top:25px;
-    margin-bottom:7px;
-}
+    .feature:last-child {
+      border-right: none;
+    }
 
-.category-card p{
-    color:#999;
-    font-size:12px;
-    line-height:1.6;
-}
+    .feature-icon {
+      color: #dfb96e;
+      font-size: 25px;
+    }
 
-/* =========================
-   SERVICES
-========================= */
+    .feature span {
+      font-size: 10px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
+    /* =========================
+       SECCIONES
+    ========================== */
 
-.service{
-    padding:28px;
-    border:1px solid var(--border);
-    border-radius:20px;
-    background:linear-gradient(135deg,#171717,#0c0c0c);
-}
+    section:not(.hero) {
+      padding: 100px 6%;
+    }
 
-.service-icon{
-    color:var(--gold);
-    font-size:32px;
-}
+    .section-title {
+      color: #dfb96e;
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
 
-.service h3{
-    margin:18px 0 8px;
-}
+    .section-heading {
+      font-size: clamp(32px, 4vw, 52px);
+      margin-top: 10px;
+    }
 
-.service p{
-    color:#999;
-    line-height:1.7;
-    font-size:12px;
-}
+    .section-description {
+      color: #999;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
 
-/* =========================
-   CTA
-========================= */
+    /* =========================
+       CATÁLOGO
+    ========================== */
 
-.cta{
-    padding:55px;
-    border:1px solid #806638;
-    border-radius:28px;
+    #catalogo {
+      background: #090909;
+    }
 
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            #46351d,
-            #111 50%
+    .catalog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter {
+      border: 1px solid #342d24;
+      background: #111;
+      color: #bbb;
+      padding: 10px 17px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: #dfb96e;
+      color: #111;
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .vehicle {
+      background: #111;
+      border: 1px solid #29231d;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .vehicle:hover {
+      transform: translateY(-6px);
+      border-color: #dfb96e;
+    }
+
+    .vehicle-image {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .yamaha {
+      background-image:
+        url("assets/hero-jt-motors.png");
+      background-position: 25% 75%;
+    }
+
+    .raptor {
+      background-image:
+        url("assets/hero-jt-motors.png");
+      background-position: 88% 70%;
+    }
+
+    .atv {
+      background-image:
+        url("assets/hero-jt-motors.png");
+      background-position: 65% 70%;
+    }
+
+    .auto {
+      background:
+        linear-gradient(135deg, #303030, #080808);
+    }
+
+    .enduro {
+      background:
+        linear-gradient(135deg, #171717, #53432b);
+    }
+
+    .suv {
+      background:
+        linear-gradient(135deg, #303030, #090909);
+    }
+
+    .vehicle-info {
+      padding: 20px;
+    }
+
+    .vehicle-info small {
+      color: #dfb96e;
+      letter-spacing: 2px;
+    }
+
+    .vehicle-info h3 {
+      font-size: 22px;
+      margin: 8px 0;
+    }
+
+    .vehicle-info p {
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .vehicle-info a {
+      color: #dfb96e;
+      font-size: 11px;
+    }
+
+    /* =========================
+       SERVICIOS
+    ========================== */
+
+    #servicios {
+      background: #0e0e0e;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .service {
+      background: #111;
+      border: 1px solid #29231d;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .service-number {
+      color: #dfb96e;
+    }
+
+    .service h3 {
+      margin: 28px 0 12px;
+    }
+
+    .service p {
+      color: #999;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       NOSOTROS
+    ========================== */
+
+    #nosotros {
+      background:
+        linear-gradient(
+          120deg,
+          #17130e,
+          #090909
+        );
+    }
+
+    .about {
+      max-width: 850px;
+    }
+
+    .about p {
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 15px;
+    }
+
+    /* =========================
+       CONTACTO
+    ========================== */
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+
+      padding: 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #17130e,
+          #0c0c0c
         );
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.cta h2{
-    font-size:clamp(40px,5vw,65px);
-    letter-spacing:-3px;
-    margin-top:8px;
-}
-
-.cta p{
-    color:#bbb;
-    line-height:1.7;
-    max-width:600px;
-    margin-top:12px;
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-    z-index:3000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    background:#000c;
-    backdrop-filter:blur(10px);
-}
-
-.modal.active{
-    display:flex;
-}
-
-.modal-box{
-    width:min(900px,100%);
-    max-height:90vh;
-    overflow:auto;
-    background:#111;
-    border:1px solid #ffffff22;
-    border-radius:22px;
-}
-
-.modal-header{
-    padding:22px;
-    border-bottom:1px solid var(--border);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.modal-close{
-    background:none;
-    border:none;
-    color:white;
-    font-size:30px;
-}
-
-.modal-body{
-    padding:25px;
-}
-
-.spec-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.spec{
-    background:#171717;
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:14px;
-}
-
-.spec span{
-    display:block;
-    color:#888;
-    font-size:10px;
-    margin-bottom:6px;
-}
-
-.spec strong{
-    font-size:13px;
-}
-
-/* =========================
-   COMPARE
-========================= */
-
-.compare-bar{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:2000;
-    display:none;
-    align-items:center;
-    gap:12px;
-    padding:13px 15px;
-    border:1px solid #806638;
-    background:#111;
-    border-radius:15px;
-    box-shadow:0 20px 60px #000;
-}
-
-.compare-bar.active{
-    display:flex;
-}
-
-.compare-count{
-    color:var(--gold-light);
-    font-weight:bold;
-}
-
-.compare-table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:600px;
-}
-
-.compare-table th,
-.compare-table td{
-    padding:12px;
-    text-align:left;
-    border-bottom:1px solid var(--border);
-}
-
-.compare-table th{
-    color:var(--gold-light);
-}
-
-/* =========================
-   TOAST
-========================= */
-
-.toast{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    z-index:4000;
-    padding:14px 17px;
-    border:1px solid #806638;
-    border-radius:10px;
-    background:#151515;
-    transform:translateY(120px);
-    transition:.3s;
-}
-
-.toast.show{
-    transform:translateY(0);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    border-top:1px solid var(--border);
-    padding:35px 0;
-    color:#777;
-    font-size:11px;
-}
-
-.footer-content{
-    display:flex;
-    justify-content:space-between;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:1100px){
-
-    .nav-links{
-        display:none;
+      border: 1px solid #403322;
+      border-radius: 12px;
     }
 
-    .menu-button{
-        display:block;
+    .contact-box p {
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 15px;
     }
 
-    .nav-buttons{
-        display:none;
+    .contact-details {
+      border-left: 1px solid #403322;
+      padding-left: 40px;
     }
 
-    .vehicle-grid{
-        grid-template-columns:repeat(2,1fr);
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 6%;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 10px;
     }
 
-    .categories{
-        grid-template-columns:repeat(2,1fr);
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature {
+        border-bottom: 1px solid #3c3224;
+      }
+
+      .catalog {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-details {
+        border-left: none;
+        border-top: 1px solid #403322;
+        padding: 25px 0 0;
+      }
     }
 
-    .filters{
-        grid-template-columns:1fr 1fr;
-    }
+    @media (max-width: 600px) {
 
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
+      .hero {
+        min-height: 800px;
+        background-position: 65% center;
+      }
 
-    .hero-info{
-        grid-template-columns:repeat(2,1fr);
-    }
+      .hero-content {
+        margin-left: 6%;
+        padding-right: 20px;
+      }
 
-    .hero-info-box:nth-child(2){
-        border-right:none;
-    }
-}
+      .hero h1 {
+        font-size: 58px;
+      }
 
-@media(max-width:700px){
+      .hero h2 {
+        font-size: 12px;
+      }
 
-    .container,
-    .nav,
-    .hero-content{
-        width:calc(100% - 26px);
-    }
+      .buttons {
+        flex-direction: column;
+        width: 220px;
+      }
 
-    .hero{
-        min-height:900px;
-    }
+      .features {
+        grid-template-columns: 1fr;
+      }
 
-    .hero-image{
-        background-position:60% center;
-    }
+      .feature {
+        border-right: none;
+      }
 
-    .hero-content{
-        padding-top:140px;
-        padding-bottom:310px;
-    }
+      .catalog,
+      .services {
+        grid-template-columns: 1fr;
+      }
 
-    .hero h1{
-        font-size:58px;
-        letter-spacing:-4px;
-    }
+      .catalog-header {
+        display: block;
+      }
 
-    .hero-info{
-        width:calc(100% - 26px);
-        bottom:12px;
-    }
+      .contact-box {
+        padding: 30px;
+      }
 
-    .hero-info-box{
-        padding:13px;
-    }
+      footer {
+        display: block;
+        text-align: center;
+      }
 
-    .hero-info-box strong{
-        font-size:8px;
+      footer div {
+        margin: 10px;
+      }
     }
-
-    .hero-info-box small{
-        display:none;
-    }
-
-    .section{
-        padding:70px 0;
-    }
-
-    .section-header{
-        display:block;
-    }
-
-    .section-description{
-        margin-top:15px;
-    }
-
-    .vehicle-grid,
-    .categories,
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .filters{
-        grid-template-columns:1fr;
-    }
-
-    .cta{
-        display:block;
-        padding:35px;
-    }
-
-    .cta .btn{
-        margin-top:20px;
-    }
-
-    .spec-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-content{
-        display:block;
-    }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<header id="header">
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-<div class="nav">
+  <header>
 
-<a href="#inicio" class="logo">
+    <a href="#inicio" class="logo">
 
-<div class="logo-jt">
-JT
-</div>
+      <span class="logo-jt">
+        JT
+      </span>
 
-<div class="logo-text">
-<strong>JT MOTORS</strong>
-<span>PREMIUM VEHICLES</span>
-</div>
+      <span class="logo-text">
+        <strong>JT MOTORS</strong>
+        <small>PREMIUM VEHICLES</small>
+      </span>
 
-</a>
+    </a>
 
-<nav class="nav-links">
+    <nav>
 
-<a href="#inicio">INICIO</a>
-<a href="#catalogo">CATÁLOGO</a>
-<a href="#categorias">CATEGORÍAS</a>
-<a href="#servicios">SERVICIOS</a>
-<a href="#nosotros">NOSOTROS</a>
-<a href="#contacto">CONTACTO</a>
+      <a href="#inicio">
+        Inicio
+      </a>
 
-</nav>
+      <a href="#catalogo">
+        Catálogo
+      </a>
 
-<div class="nav-buttons">
+      <a href="#servicios">
+        Servicios
+      </a>
 
-<button class="icon-button" onclick="buscar()">⌕</button>
+      <a href="#nosotros">
+        Nosotros
+      </a>
 
-<button class="icon-button" onclick="mostrarFavoritos()">♡</button>
+      <a href="#contacto">
+        Contacto
+      </a>
 
-</div>
+    </nav>
 
-<button class="icon-button menu-button" onclick="menuMobile()">
-☰
-</button>
+  </header>
 
-</div>
 
-</header>
+  <!-- =========================
+       INICIO
+  ========================== -->
 
+  <section class="hero" id="inicio">
 
-<!-- =========================
-     HERO
-========================= -->
+    <div class="hero-content">
 
-<section class="hero" id="inicio">
+      <div class="category">
+        MOTOS &nbsp; | &nbsp;
+        CUATRIMOTOS &nbsp; | &nbsp;
+        AUTOS &nbsp; | &nbsp;
+        CAMIONETAS
+      </div>
 
-<div class="hero-image"></div>
+      <h1>
+        <span>JT</span> MOTORS
+      </h1>
 
-<div class="hero-content">
+      <h2>
+        VEHÍCULOS QUE REPRESENTAN TU ESTILO
+      </h2>
 
-<div class="hero-small">
-MOTOS · CUATRIMOTOS · AUTOS · CAMIONETAS
-</div>
+      <p>
+        Encuentra vehículos con carácter, potencia y estilo.
+        Explora nuestro catálogo y conoce las opciones disponibles
+        en JT Motors.
+      </p>
 
-<h1>
-<span>JT</span> MOTORS
-</h1>
+      <div class="buttons">
 
-<h2>
-VEHÍCULOS QUE REPRESENTAN TU ESTILO
-</h2>
+        <a
+          href="#catalogo"
+          class="btn btn-gold"
+        >
+          Explorar catálogo →
+        </a>
 
-<p>
-Descubre una colección de motos, cuatrimotos, autos,
-SUV y camionetas para quienes buscan potencia,
-diseño, aventura y personalidad.
-</p>
+        <a
+          href="#nosotros"
+          class="btn btn-outline"
+        >
+          Conoce más
+        </a>
 
-<div class="buttons">
+      </div>
 
-<a href="#catalogo" class="btn btn-gold">
-EXPLORAR CATÁLOGO →
-</a>
+    </div>
 
-<a href="#nosotros" class="btn btn-dark">
-CONOCE JT MOTORS
-</a>
+  </section>
 
-</div>
 
-</div>
+  <!-- =========================
+       CARACTERÍSTICAS
+  ========================== -->
 
+  <div class="features">
 
-<div class="hero-info">
+    <div class="feature">
+      <div class="feature-icon">✓</div>
 
-<div class="hero-info-box">
+      <span>
+        VEHÍCULOS<br>
+        SELECCIONADOS
+      </span>
+    </div>
 
-<div class="hero-info-icon">◇</div>
+    <div class="feature">
+      <div class="feature-icon">★</div>
 
-<div>
-<strong>VEHÍCULOS SELECCIONADOS</strong>
-<small>Catálogo premium</small>
-</div>
+      <span>
+        ASESORÍA<br>
+        PERSONALIZADA
+      </span>
+    </div>
 
-</div>
+    <div class="feature">
+      <div class="feature-icon">▣</div>
 
-<div class="hero-info-box">
+      <span>
+        ENTREGA<br>
+        SEGURA
+      </span>
+    </div>
 
-<div class="hero-info-icon">☆</div>
+    <div class="feature">
+      <div class="feature-icon">♧</div>
 
-<div>
-<strong>ASESORÍA PERSONALIZADA</strong>
-<small>Encuentra tu vehículo</small>
-</div>
+      <span>
+        SOPORTE<br>
+        POSTVENTA
+      </span>
+    </div>
 
-</div>
+  </div>
 
-<div class="hero-info-box">
 
-<div class="hero-info-icon">▣</div>
+  <!-- =========================
+       CATÁLOGO
+  ========================== -->
 
-<div>
-<strong>ENTREGA SEGURA</strong>
-<small>Proceso acompañado</small>
-</div>
+  <section id="catalogo">
 
-</div>
+    <div class="catalog-header">
 
-<div class="hero-info-box">
+      <div>
 
-<div class="hero-info-icon">♧</div>
+        <div class="section-title">
+          CATÁLOGO
+        </div>
 
-<div>
-<strong>SOPORTE POSTVENTA</strong>
-<small>Estamos contigo</small>
-</div>
+        <h2 class="section-heading">
+          Encuentra tu próximo vehículo
+        </h2>
 
-</div>
+      </div>
 
-</div>
+      <p class="section-description">
+        Motos, cuatrimotos, autos y camionetas.
+      </p>
 
-</section>
+    </div>
 
 
-<!-- =========================
-     CATALOGO
-========================= -->
+    <div class="filters">
 
-<section class="section" id="catalogo">
+      <button class="filter active" data-filter="todos">
+        Todos
+      </button>
 
-<div class="container">
+      <button class="filter" data-filter="motos">
+        Motos
+      </button>
 
-<div class="section-header">
+      <button class="filter" data-filter="cuatrimotos">
+        Cuatrimotos
+      </button>
 
-<div>
+      <button class="filter" data-filter="autos">
+        Autos
+      </button>
 
-<div class="eyebrow">
-COLECCIÓN JT MOTORS
-</div>
+      <button class="filter" data-filter="camionetas">
+        Camionetas
+      </button>
 
-<h2 class="section-title">
-Encuentra tu próximo vehículo.
-</h2>
+    </div>
 
-</div>
 
-<p class="section-description">
-Busca por marca, modelo, categoría, combustible
-o tracción.
-</p>
+    <div class="catalog">
 
-</div>
 
+      <article
+        class="vehicle"
+        data-category="motos"
+      >
 
-<div class="stats">
+        <div class="vehicle-image yamaha"></div>
 
-<div class="stat">
-<strong id="totalVehicles">0</strong>
-<span>VEHÍCULOS</span>
-</div>
+        <div class="vehicle-info">
 
-<div class="stat">
-<strong>5</strong>
-<span>CATEGORÍAS</span>
-</div>
+          <small>MOTOS</small>
 
-<div class="stat">
-<strong id="totalFavorites">0</strong>
-<span>FAVORITOS</span>
-</div>
+          <h3>
+            Yamaha YZ
+          </h3>
 
-<div class="stat">
-<strong id="totalCompare">0</strong>
-<span>COMPARACIÓN</span>
-</div>
+          <p>
+            Motocross · Off-road · Alto rendimiento
+          </p>
 
-</div>
+          <a href="#contacto">
+            Consultar →
+          </a>
 
+        </div>
 
-<div class="filters">
+      </article>
 
-<input
-id="search"
-class="input"
-placeholder="🔎 Buscar vehículo..."
-oninput="renderVehicles()"
->
 
-<select id="category" class="select" onchange="renderVehicles()">
+      <article
+        class="vehicle"
+        data-category="cuatrimotos"
+      >
 
-<option value="">Todas las categorías</option>
+        <div class="vehicle-image atv"></div>
 
-<option value="Moto">Motos</option>
+        <div class="vehicle-info">
 
-<option value="Cuatrimoto">Cuatrimotos</option>
+          <small>CUATRIMOTOS</small>
 
-<option value="Auto">Autos</option>
+          <h3>
+            ATV Off-Road
+          </h3>
 
-<option value="SUV">SUV</option>
+          <p>
+            Aventura · Terreno difícil · Recreación
+          </p>
 
-<option value="Camioneta">Camionetas</option>
+          <a href="#contacto">
+            Consultar →
+          </a>
 
-</select>
+        </div>
 
+      </article>
 
-<select id="brand" class="select" onchange="renderVehicles()">
 
-<option value="">Todas las marcas</option>
+      <article
+        class="vehicle"
+        data-category="autos"
+      >
 
-</select>
+        <div class="vehicle-image auto"></div>
 
+        <div class="vehicle-info">
 
-<select id="fuel" class="select" onchange="renderVehicles()">
+          <small>AUTOS</small>
 
-<option value="">Combustible</option>
+          <h3>
+            Sport Sedan
+          </h3>
 
-<option value="Gasolina">Gasolina</option>
+          <p>
+            Diseño · Tecnología · Confort
+          </p>
 
-<option value="Diésel">Diésel</option>
+          <a href="#contacto">
+            Consultar →
+          </a>
 
-<option value="Híbrido">Híbrido</option>
+        </div>
 
-<option value="Eléctrico">Eléctrico</option>
+      </article>
 
-</select>
 
+      <article
+        class="vehicle"
+        data-category="camionetas"
+      >
 
-<select id="drive" class="select" onchange="renderVehicles()">
+        <div class="vehicle-image raptor"></div>
 
-<option value="">Tracción</option>
+        <div class="vehicle-info">
 
-<option value="4x2">4x2</option>
+          <small>CAMIONETAS</small>
 
-<option value="4x4">4x4</option>
+          <h3>
+            Ford Raptor
+          </h3>
 
-<option value="AWD">AWD</option>
+          <p>
+            Off-road · Potencia · Presencia
+          </p>
 
-<option value="Cadena">Cadena</option>
+          <a href="#contacto">
+            Consultar →
+          </a>
 
-<option value="CVT">CVT</option>
+        </div>
 
-</select>
+      </article>
 
 
-<select id="sort" class="select" onchange="renderVehicles()">
+      <article
+        class="vehicle"
+        data-category="motos"
+      >
 
-<option value="featured">Destacados</option>
+        <div class="vehicle-image enduro"></div>
 
-<option value="low">Precio menor</option>
+        <div class="vehicle-info">
 
-<option value="high">Precio mayor</option>
+          <small>MOTOS</small>
 
-<option value="name">Nombre A-Z</option>
+          <h3>
+            Enduro Performance
+          </h3>
 
-</select>
+          <p>
+            Versatilidad · Suspensión · Aventura
+          </p>
 
+          <a href="#contacto">
+            Consultar →
+          </a>
 
-<button class="btn btn-gold" onclick="clearFilters()">
-LIMPIAR
-</button>
+        </div>
 
-</div>
+      </article>
 
 
-<div class="vehicle-grid" id="vehicleGrid">
-</div>
+      <article
+        class="vehicle"
+        data-category="camionetas"
+      >
 
-</div>
+        <div class="vehicle-image suv"></div>
 
-</section>
+        <div class="vehicle-info">
 
+          <small>CAMIONETAS</small>
 
-<!-- =========================
-     CATEGORIAS
-========================= -->
+          <h3>
+            Premium SUV
+          </h3>
 
-<section class="section" id="categorias">
+          <p>
+            Espacio · Seguridad · Estilo
+          </p>
 
-<div class="container">
+          <a href="#contacto">
+            Consultar →
+          </a>
 
-<div class="section-header">
+        </div>
 
-<div>
+      </article>
 
-<div class="eyebrow">
-EXPLORA
-</div>
+    </div>
 
-<h2 class="section-title">
-Por categoría.
-</h2>
+  </section>
 
-</div>
 
-</div>
+  <!-- =========================
+       SERVICIOS
+  ========================== -->
 
+  <section id="servicios">
 
-<div class="categories">
+    <div class="section-title">
+      SERVICIOS
+    </div>
 
-<div class="category-card" onclick="selectCategory('Moto')">
+    <h2 class="section-heading">
+      Más que vender vehículos
+    </h2>
 
-<div class="category-icon">
-🏍️
-</div>
 
-<h3>Motos</h3>
+    <div class="services">
 
-<p>
-Deportivas, motocross, naked y adventure.
-</p>
+      <div class="service">
 
-</div>
+        <div class="service-number">
+          01
+        </div>
 
+        <h3>
+          Asesoría personalizada
+        </h3>
 
-<div class="category-card" onclick="selectCategory('Cuatrimoto')">
+        <p>
+          Te orientamos para encontrar una opción
+          acorde con tu estilo y necesidades.
+        </p>
 
-<div class="category-icon">
-🛞
-</div>
+      </div>
 
-<h3>Cuatrimotos</h3>
 
-<p>
-Vehículos para aventura y off-road.
-</p>
+      <div class="service">
 
-</div>
+        <div class="service-number">
+          02
+        </div>
 
+        <h3>
+          Selección de vehículos
+        </h3>
 
-<div class="category-card" onclick="selectCategory('Auto')">
+        <p>
+          Opciones de motos, cuatrimotos, autos
+          y camionetas en un solo lugar.
+        </p>
 
-<div class="category-icon">
-🏎️
-</div>
+      </div>
 
-<h3>Autos</h3>
 
-<p>
-Deportivos y vehículos de alto desempeño.
-</p>
+      <div class="service">
 
-</div>
+        <div class="service-number">
+          03
+        </div>
 
+        <h3>
+          Entrega segura
+        </h3>
 
-<div class="category-card" onclick="selectCategory('Camioneta')">
+        <p>
+          Coordinamos el proceso de entrega
+          de manera clara y organizada.
+        </p>
 
-<div class="category-icon">
-🛻
-</div>
+      </div>
 
-<h3>Camionetas</h3>
 
-<p>
-Raptor, Tacoma, Tundra y más.
-</p>
+      <div class="service">
 
-</div>
+        <div class="service-number">
+          04
+        </div>
 
-</div>
+        <h3>
+          Atención postventa
+        </h3>
 
-</div>
+        <p>
+          Seguimos disponibles para resolver
+          dudas después de tu compra.
+        </p>
 
-</section>
+      </div>
 
+    </div>
 
-<!-- =========================
-     SERVICIOS
-========================= -->
+  </section>
 
-<section class="section" id="servicios">
 
-<div class="container">
+  <!-- =========================
+       NOSOTROS
+  ========================== -->
 
-<div class="section-header">
+  <section id="nosotros">
 
-<div>
+    <div class="about">
 
-<div class="eyebrow">
-JT MOTORS
-</div>
+      <div class="section-title">
+        NOSOTROS
+      </div>
 
-<h2 class="section-title">
-Más que un catálogo.
-</h2>
+      <h2 class="section-heading">
+        Tu estilo. Tu vehículo. Tu camino.
+      </h2>
 
-</div>
+      <p>
+        JT Motors reúne vehículos con personalidad
+        y una experiencia de atención cercana,
+        clara y moderna.
+      </p>
 
-<p class="section-description">
-Una experiencia pensada para descubrir,
-comparar y guardar vehículos.
-</p>
+      <p>
+        La idea es que puedas explorar, comparar
+        y contactar fácilmente desde cualquier dispositivo.
+      </p>
 
-</div>
+    </div>
 
+  </section>
 
-<div class="services">
 
+  <!-- =========================
+       CONTACTO
+  ========================== -->
 
-<div class="service">
+  <section id="contacto">
 
-<div class="service-icon">
-✦
-</div>
+    <div class="contact-box">
 
-<h3>
-Compra informada
-</h3>
+      <div>
 
-<p>
-Consulta las características principales
-de cada vehículo antes de tomar una decisión.
-</p>
+        <div class="section-title">
+          CONTACTO
+        </div>
 
-</div>
+        <h2 class="section-heading">
+          Hablemos de tu próximo vehículo.
+        </h2>
 
+        <p>
+          Escríbenos para consultar disponibilidad,
+          características y proceso de compra.
+        </p>
 
-<div class="service">
+      </div>
 
-<div class="service-icon">
-⚖
-</div>
 
-<h3>
-Comparación
-</h3>
+      <div class="contact-details">
 
-<p>
-Compara hasta tres vehículos al mismo tiempo
-para revisar sus características.
-</p>
+        <p>
+          <strong>
+            Asesora:
+          </strong>
+          <br>
+          Vanessa Dantorres Carona
+        </p>
 
-</div>
+        <p>
+          <strong>
+            Teléfono:
+          </strong>
+          <br>
+          323-29-29-252
+        </p>
 
+        <br>
 
-<div class="service">
+        <a
+          class="btn btn-gold"
+          href="https://wa.me/573232929252"
+          target="_blank"
+        >
+          Escribir por WhatsApp →
+        </a>
 
-<div class="service-icon">
-♡
-</div>
+      </div>
 
-<h3>
-Favoritos
-</h3>
+    </div>
 
-<p>
-Guarda los vehículos que más te interesan
-directamente en tu navegador.
-</p>
+  </section>
 
-</div>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-</div>
+  <footer>
 
-</div>
+    <div>
+      © 2026 JT MOTORS
+    </div>
 
-</section>
+    <div>
+      PREMIUM VEHICLES
+    </div>
 
+    <div>
+      <a href="#inicio">
+        Volver arriba ↑
+      </a>
+    </div>
 
-<!-- =========================
-     NOSOTROS
-========================= -->
+  </footer>
 
-<section class="section" id="nosotros">
 
-<div class="container">
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-<div class="cta">
+  <script>
 
-<div>
+    const filters =
+      document.querySelectorAll(".filter");
 
-<div class="eyebrow">
-JT MOTORS
-</div>
+    const vehicles =
+      document.querySelectorAll(".vehicle");
 
-<h2>
-Tu estilo. Tu vehículo.
-</h2>
 
-<p>
-Una experiencia premium para descubrir vehículos
-que combinan aventura, potencia, diseño y personalidad.
-</p>
+    filters.forEach(filter => {
 
-</div>
+      filter.addEventListener("click", () => {
 
-<a href="#contacto" class="btn btn-gold">
-HABLEMOS →
-</a>
+        filters.forEach(button => {
+          button.classList.remove("active");
+        });
 
-</div>
+        filter.classList.add("active");
 
-</div>
 
-</section>
+        const category =
+          filter.dataset.filter;
 
 
-<!-- =========================
-     CONTACTO
-========================= -->
+        vehicles.forEach(vehicle => {
 
-<section class="section" id="contacto">
+          if (
+            category === "todos" ||
+            vehicle.dataset.category === category
+          ) {
 
-<div class="container">
+            vehicle.style.display = "";
 
-<div class="section-header">
+          } else {
 
-<div>
+            vehicle.style.display = "none";
 
-<div class="eyebrow">
-CONTACTO
-</div>
+          }
 
-<h2 class="section-title">
-¿Buscas algo específico?
-</h2>
+        });
 
-</div>
+      });
 
-<p class="section-description">
-Comunícate con JT Motors para recibir información
-sobre los vehículos disponibles.
-</p>
+    });
 
-</div>
-
-
-<div class="services">
-
-
-<div class="service">
-
-<div class="service-icon">
-◉
-</div>
-
-<h3>
-WhatsApp
-</h3>
-
-<p>
-Habla directamente con JT Motors.
-</p>
-
-<a
-class="btn btn-gold"
-href="https://wa.me/"
-target="_blank"
->
-WHATSAPP →
-</a>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-@
-</div>
-
-<h3>
-Correo
-</h3>
-
-<p>
-Escríbenos para solicitar información.
-</p>
-
-<a
-class="btn btn-dark"
-href="mailto:contacto@jtmotors.com"
->
-ENVIAR CORREO
-</a>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-⌖
-</div>
-
-<h3>
-Ubicación
-</h3>
-
-<p>
-Agrega aquí la ubicación real de JT Motors.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     COMPARE BAR
-========================= -->
-
-<div class="compare-bar" id="compareBar">
-
-<span class="compare-count">
-
-<span id="compareNumber">
-0
-</span>
-
-/ 3 seleccionados
-
-</span>
-
-<button class="card-button gold" onclick="compareVehicles()">
-COMPARAR
-</button>
-
-<button class="card-button" onclick="clearCompare()">
-VACIAR
-</button>
-
-</div>
-
-
-<!-- =========================
-     MODAL
-========================= -->
-
-<div class="modal" id="modal">
-
-<div class="modal-box">
-
-<div class="modal-header">
-
-<div>
-
-<div class="eyebrow">
-JT MOTORS
-</div>
-
-<h2 id="modalTitle">
-Vehículo
-</h2>
-
-</div>
-
-<button class="modal-close" onclick="closeModal()">
-×
-</button>
-
-</div>
-
-<div class="modal-body" id="modalBody">
-</div>
-
-</div>
-
-</div>
-
-
-<div class="toast" id="toast">
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<div class="container footer-content">
-
-<span>
-© 2026 JT MOTORS — PREMIUM VEHICLES
-</span>
-
-<span>
-Diseñado para amantes de los vehículos
-</span>
-
-</div>
-
-</footer>
-
-
-<script>
-
-/* ============================================================
-   VEHÍCULOS
-============================================================ */
-
-const vehicles = [
-
-/* MOTOS */
-
-{
-id:1,
-brand:"Yamaha",
-model:"YZ250F",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:3299,
-year:2026,
-engine:"250 cc",
-power:"Alta",
-transmission:"5 velocidades",
-seats:"1",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:2,
-brand:"Yamaha",
-model:"MT-07",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:8799,
-year:2026,
-engine:"689 cc",
-power:"Alta",
-transmission:"6 velocidades",
-seats:"2",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:3,
-brand:"Yamaha",
-model:"R7",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:9199,
-year:2026,
-engine:"689 cc",
-power:"Alta",
-transmission:"6 velocidades",
-seats:"2",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:4,
-brand:"Yamaha",
-model:"MT-09",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:11999,
-year:2026,
-engine:"890 cc",
-power:"Muy alta",
-transmission:"6 velocidades",
-seats:"2",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:5,
-brand:"Honda",
-model:"CRF450R",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:9699,
-year:2026,
-engine:"449 cc",
-power:"Muy alta",
-transmission:"5 velocidades",
-seats:"1",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:6,
-brand:"Kawasaki",
-model:"Ninja ZX-6R",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:11299,
-year:2026,
-engine:"636 cc",
-power:"Muy alta",
-transmission:"6 velocidades",
-seats:"2",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:7,
-brand:"BMW",
-model:"S 1000 RR",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:18500,
-year:2026,
-engine:"999 cc",
-power:"Muy alta",
-transmission:"6 velocidades",
-seats:"2",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-{
-id:8,
-brand:"Ducati",
-model:"Panigale V4",
-category:"Moto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:23995,
-year:2026,
-engine:"1103 cc",
-power:"Muy alta",
-transmission:"6 velocidades",
-seats:"2",
-condition:"Nueva",
-emoji:"🏍️"
-},
-
-/* CUATRIMOTOS */
-
-{
-id:9,
-brand:"Yamaha",
-model:"Raptor 700R",
-category:"Cuatrimoto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:10499,
-year:2026,
-engine:"686 cc",
-power:"Muy alta",
-transmission:"5 velocidades",
-seats:"1",
-condition:"Nueva",
-emoji:"🛞"
-},
-
-{
-id:10,
-brand:"Yamaha",
-model:"YFZ450R",
-category:"Cuatrimoto",
-fuel:"Gasolina",
-drive:"Cadena",
-price:9999,
-year:2026,
-engine:"449 cc",
-power:"Alta",
-transmission:"5 velocidades",
-seats:"1",
-condition:"Nueva",
-emoji:"🛞"
-},
-
-{
-id:11,
-brand:"Can-Am",
-model:"Renegade",
-category:"Cuatrimoto",
-fuel:"Gasolina",
-drive:"CVT",
-price:15499,
-year:2026,
-engine:"1000 cc",
-power:"Muy alta",
-transmission:"CVT",
-seats:"1",
-condition:"Nueva",
-emoji:"🛞"
-},
-
-{
-id:12,
-brand:"Polaris",
-model:"RZR",
-category:"Cuatrimoto",
-fuel:"Gasolina",
-drive:"CVT",
-price:21999,
-year:2026,
-engine:"999 cc",
-power:"Muy alta",
-transmission:"CVT",
-seats:"2",
-condition:"Nueva",
-emoji:"🛞"
-},
-
-/* AUTOS */
-
-{
-id:13,
-brand:"Toyota",
-model:"GR Supra",
-category:"Auto",
-fuel:"Gasolina",
-drive:"4x2",
-price:56900,
-year:2026,
-engine:"3.0 Turbo",
-power:"Muy alta",
-transmission:"8 velocidades",
-seats:"2",
-condition:"Nuevo",
-emoji:"🏎️"
-},
-
-{
-id:14,
-brand:"Ford",
-model:"Mustang GT",
-category:"Auto",
-fuel:"Gasolina",
-drive:"4x2",
-price:44999,
-year:2026,
-engine:"5.0 V8",
-power:"Muy alta",
-transmission:"10 velocidades",
-seats:"4",
-condition:"Nuevo",
-emoji:"🏎️"
-},
-
-{
-id:15,
-brand:"Chevrolet",
-model:"Corvette C8",
-category:"Auto",
-fuel:"Gasolina",
-drive:"4x2",
-price:69995,
-year:2026,
-engine:"6.2 V8",
-power:"Muy alta",
-transmission:"8 velocidades",
-seats:"2",
-condition:"Nuevo",
-emoji:"🏎️"
-},
-
-{
-id:16,
-brand:"Nissan",
-model:"GT-R",
-category:"Auto",
-fuel:"Gasolina",
-drive:"AWD",
-price:121000,
-year:2026,
-engine:"3.8 V6",
-power:"Muy alta",
-transmission:"DCT",
-seats:"4",
-condition:"Nuevo",
-emoji:"🏎️"
-},
-
-{
-id:17,
-brand:"BMW",
-model:"M4",
-category:"Auto",
-fuel:"Gasolina",
-drive:"AWD",
-price:79900,
-year:2026,
-engine:"3.0 Turbo",
-power:"Muy alta",
-transmission:"8 velocidades",
-seats:"4",
-condition:"Nuevo",
-emoji:"🏎️"
-},
-
-{
-id:18,
-brand:"Porsche",
-model:"911 Carrera",
-category:"Auto",
-fuel:"Gasolina",
-drive:"AWD",
-price:122000,
-year:2026,
-engine:"3.0 Turbo",
-power:"Muy alta",
-transmission:"8 velocidades",
-seats:"4",
-condition:"Nuevo",
-emoji:"🏎️"
-},
-
-/* CAMIONETAS */
-
-{
-id:19,
-brand:"Ford",
-model:"F-150 Raptor",
-category:"Camioneta",
-fuel:"Gasolina",
-drive:"4x4",
-price:78900,
-year:2026,
-engine:"3.5 V6",
-power:"Muy alta",
-transmission:"10 velocidades",
-seats:"5",
-condition:"Nueva",
-emoji:"🛻"
-},
-
-{
-id:20,
-brand:"Ford",
-model:"Ranger Raptor",
-category:"Camioneta",
-fuel:"Gasolina",
-drive:"4x4",
-price:57900,
-year:2026,
-engine:"3.0 V6",
-power:"Muy alta",
-transmission:"10 velocidades",
-seats:"5",
-condition:"Nueva",
-emoji:"🛻"
-},
-
-{
-id:21,
-brand:"Toyota",
-model:"Tacoma TRD Pro",
-category:"Camioneta",
-fuel:"Gasolina",
-drive:"4x4",
-price:64900,
-year:2026,
-engine:"3.5 V6",
-power:"Muy alta",
-transmission:"Automática",
-seats:"5",
-condition:"Nueva",
-emoji:"🛻"
-},
-
-{
-id:22,
-brand:"Toyota",
-model:"Tundra TRD Pro",
-category:"Camioneta",
-fuel:"Híbrido",
-drive:"4x4",
-price:72900,
-year:2026,
-engine:"3.5 V6 Hybrid",
-power:"Muy alta",
-transmission:"10 velocidades",
-seats:"5",
-condition:"Nueva",
-emoji:"🛻"
-},
-
-{
-id:23,
-brand:"Chevrolet",
-model:"Silverado ZR2",
-category:"Camioneta",
-fuel:"Gasolina",
-drive:"4x4",
-price:70900,
-year:2026,
-engine:"6.2 V8",
-power:"Muy alta",
-transmission:"10 velocidades",
-seats:"5",
-condition:"Nueva",
-emoji:"🛻"
-},
-
-{
-id:24,
-brand:"RAM",
-model:"1500 TRX",
-category:"Camioneta",
-fuel:"Gasolina",
-drive:"4x4",
-price:88900,
-year:2026,
-engine:"6.2 V8",
-power:"Muy alta",
-transmission:"8 velocidades",
-seats:"5",
-condition:"Nueva",
-emoji:"🛻"
-},
-
-/* SUV */
-
-{
-id:25,
-brand:"Toyota",
-model:"Land Cruiser",
-category:"SUV",
-fuel:"Gasolina",
-drive:"4x4",
-price:56900,
-year:2026,
-engine:"2.4 Turbo",
-power:"Alta",
-transmission:"8 velocidades",
-seats:"7",
-condition:"Nuevo",
-emoji:"🚙"
-},
-
-{
-id:26,
-brand:"Ford",
-model:"Bronco Raptor",
-category:"SUV",
-fuel:"Gasolina",
-drive:"4x4",
-price:91000,
-year:2026,
-engine:"3.0 V6",
-power:"Muy alta",
-transmission:"10 velocidades",
-seats:"5",
-condition:"Nuevo",
-emoji:"🚙"
-},
-
-{
-id:27,
-brand:"Jeep",
-model:"Wrangler Rubicon",
-category:"SUV",
-fuel:"Gasolina",
-drive:"4x4",
-price:48900,
-year:2026,
-engine:"3.6 V6",
-power:"Alta",
-transmission:"8 velocidades",
-seats:"5",
-condition:"Nuevo",
-emoji:"🚙"
-},
-
-{
-id:28,
-brand:"Mercedes-Benz",
-model:"AMG G 63",
-category:"SUV",
-fuel:"Gasolina",
-drive:"AWD",
-price:180000,
-year:2026,
-engine:"4.0 V8",
-power:"Muy alta",
-transmission:"9 velocidades",
-seats:"5",
-condition:"Nuevo",
-emoji:"🚙"
-}
-
-];
-
-
-/* ============================================================
-   VARIABLES
-============================================================ */
-
-const grid=document.getElementById("vehicleGrid");
-
-const search=document.getElementById("search");
-
-const category=document.getElementById("category");
-
-const brand=document.getElementById("brand");
-
-const fuel=document.getElementById("fuel");
-
-const drive=document.getElementById("drive");
-
-const sort=document.getElementById("sort");
-
-const modal=document.getElementById("modal");
-
-const modalTitle=document.getElementById("modalTitle");
-
-const modalBody=document.getElementById("modalBody");
-
-const toastElement=document.getElementById("toast");
-
-let favorites=new Set(
-JSON.parse(localStorage.getItem("jtFavorites")||"[]")
-);
-
-let compareList=[];
-
-
-/* ============================================================
-   MARCAS
-============================================================ */
-
-const brands=[
-...new Set(
-vehicles.map(vehicle=>vehicle.brand)
-)
-].sort();
-
-brands.forEach(brandName=>{
-
-const option=document.createElement("option");
-
-option.value=brandName;
-
-option.textContent=brandName;
-
-brand.appendChild(option);
-
-});
-
-
-/* ============================================================
-   FORMATO PRECIO
-============================================================ */
-
-function formatPrice(price){
-
-return "$"+price.toLocaleString("en-US");
-
-}
-
-
-/* ============================================================
-   RENDER VEHICLES
-============================================================ */
-
-function renderVehicles(){
-
-const query=search.value.toLowerCase().trim();
-
-const selectedCategory=category.value;
-
-const selectedBrand=brand.value;
-
-const selectedFuel=fuel.value;
-
-const selectedDrive=drive.value;
-
-let results=vehicles.filter(vehicle=>{
-
-const text=(
-vehicle.brand+
-" "+
-vehicle.model+
-" "+
-vehicle.engine+
-" "+
-vehicle.category
-).toLowerCase();
-
-return(
-
-(!query||text.includes(query))&&
-
-(!selectedCategory||
-vehicle.category===selectedCategory)&&
-
-(!selectedBrand||
-vehicle.brand===selectedBrand)&&
-
-(!selectedFuel||
-vehicle.fuel===selectedFuel)&&
-
-(!selectedDrive||
-vehicle.drive===selectedDrive)
-
-);
-
-});
-
-
-if(sort.value==="low"){
-
-results.sort(
-(a,b)=>a.price-b.price
-);
-
-}
-
-if(sort.value==="high"){
-
-results.sort(
-(a,b)=>b.price-a.price
-);
-
-}
-
-if(sort.value==="name"){
-
-results.sort(
-(a,b)=>
-(a.brand+a.model)
-.localeCompare(
-b.brand+b.model
-)
-);
-
-}
-
-
-if(results.length===0){
-
-grid.innerHTML=`
-
-<div style="
-grid-column:1/-1;
-text-align:center;
-padding:60px;
-color:#999;
-">
-
-No encontramos vehículos
-con esos filtros.
-
-</div>
-
-`;
-
-}else{
-
-grid.innerHTML=
-results.map(createVehicleCard).join("");
-
-}
-
-
-updateCounters();
-
-}
-
-
-/* ============================================================
-   VEHICLE CARD
-============================================================ */
-
-function createVehicleCard(vehicle){
-
-const isFavorite=favorites.has(vehicle.id);
-
-const isCompared=
-compareList.includes(vehicle.id);
-
-return`
-
-<article class="vehicle-card">
-
-<div class="vehicle-image">
-
-<span class="vehicle-tag">
-${vehicle.category}
-</span>
-
-<button
-class="favorite ${isFavorite?"active":""}"
-onclick="toggleFavorite(${vehicle.id})"
->
-${isFavorite?"♥":"♡"}
-</button>
-
-<span>
-${vehicle.emoji}
-</span>
-
-</div>
-
-
-<div class="vehicle-content">
-
-<div class="brand">
-${vehicle.brand}
-</div>
-
-<h3>
-${vehicle.model}
-</h3>
-
-<div class="vehicle-meta">
-${vehicle.year} · ${vehicle.condition}
-</div>
-
-<div class="price">
-${formatPrice(vehicle.price)}
-</div>
-
-
-<div class="chips">
-
-<span class="chip">
-${vehicle.engine}
-</span>
-
-<span class="chip">
-${vehicle.drive}
-</span>
-
-<span class="chip">
-${vehicle.fuel}
-</span>
-
-</div>
-
-
-<div class="card-buttons">
-
-<button
-class="card-button gold"
-onclick="showVehicle(${vehicle.id})"
->
-VER FICHA
-</button>
-
-<button
-class="card-button"
-onclick="addCompare(${vehicle.id})"
->
-${isCompared?"✓ COMPARANDO":"COMPARAR"}
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-`;
-
-}
-
-
-/* ============================================================
-   FAVORITOS
-============================================================ */
-
-function toggleFavorite(id){
-
-if(favorites.has(id)){
-
-favorites.delete(id);
-
-showToast("Eliminado de favoritos");
-
-}else{
-
-favorites.add(id);
-
-showToast("Añadido a favoritos");
-
-}
-
-localStorage.setItem(
-"jtFavorites",
-JSON.stringify([...favorites])
-);
-
-renderVehicles();
-
-}
-
-
-function mostrarFavoritos(){
-
-const favoriteVehicles=
-vehicles.filter(
-vehicle=>favorites.has(vehicle.id)
-);
-
-document.getElementById("catalogo")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-if(favoriteVehicles.length===0){
-
-grid.innerHTML=`
-
-<div style="
-grid-column:1/-1;
-text-align:center;
-padding:60px;
-color:#999;
-">
-
-Todavía no tienes
-vehículos favoritos.
-
-</div>
-
-`;
-
-return;
-
-}
-
-grid.innerHTML=
-favoriteVehicles
-.map(createVehicleCard)
-.join("");
-
-}
-
-
-/* ============================================================
-   VEHICLE DETAILS
-============================================================ */
-
-function showVehicle(id){
-
-const vehicle=
-vehicles.find(
-item=>item.id===id
-);
-
-modalTitle.textContent=
-vehicle.brand+" "+vehicle.model;
-
-
-modalBody.innerHTML=`
-
-<div style="
-font-size:85px;
-margin-bottom:15px;
-">
-
-${vehicle.emoji}
-
-</div>
-
-<div class="brand">
-${vehicle.brand}
-</div>
-
-<h2 style="
-font-size:35px;
-margin:7px 0;
-">
-
-${vehicle.model}
-
-</h2>
-
-<div class="price">
-${formatPrice(vehicle.price)}
-</div>
-
-<p style="
-color:#999;
-line-height:1.7;
-margin:15px 0 25px;
-">
-
-Ficha técnica de referencia.
-Verifica disponibilidad, versión,
-año y precio final antes de publicar
-una oferta comercial.
-
-</p>
-
-
-<div class="spec-grid">
-
-${specification(
-"Categoría",
-vehicle.category
-)}
-
-${specification(
-"Año",
-vehicle.year
-)}
-
-${specification(
-"Motor",
-vehicle.engine
-)}
-
-${specification(
-"Potencia",
-vehicle.power
-)}
-
-${specification(
-"Transmisión",
-vehicle.transmission
-)}
-
-${specification(
-"Combustible",
-vehicle.fuel
-)}
-
-${specification(
-"Tracción",
-vehicle.drive
-)}
-
-${specification(
-"Pasajeros",
-vehicle.seats
-)}
-
-${specification(
-"Estado",
-vehicle.condition
-)}
-
-</div>
-
-
-<div class="buttons">
-
-<a
-href="#contacto"
-class="btn btn-gold"
-onclick="closeModal()"
->
-
-SOLICITAR INFORMACIÓN →
-
-</a>
-
-</div>
-
-`;
-
-modal.classList.add("active");
-
-}
-
-
-function specification(name,value){
-
-return`
-
-<div class="spec">
-
-<span>
-${name}
-</span>
-
-<strong>
-${value}
-</strong>
-
-</div>
-
-`;
-
-}
-
-
-/* ============================================================
-   COMPARADOR
-============================================================ */
-
-function addCompare(id){
-
-if(compareList.includes(id)){
-
-showToast(
-"Este vehículo ya está seleccionado."
-);
-
-return;
-
-}
-
-if(compareList.length>=3){
-
-showToast(
-"Solo puedes comparar 3 vehículos."
-);
-
-return;
-
-}
-
-compareList.push(id);
-
-renderVehicles();
-
-showToast(
-"Vehículo añadido a comparación."
-);
-
-}
-
-
-function compareVehicles(){
-
-if(compareList.length<2){
-
-showToast(
-"Selecciona al menos 2 vehículos."
-);
-
-return;
-
-}
-
-const selected=
-compareList.map(
-id=>vehicles.find(
-vehicle=>vehicle.id===id
-)
-);
-
-modalTitle.textContent=
-"Comparación JT Motors";
-
-
-const rows=[
-
-["Precio","price"],
-
-["Año","year"],
-
-["Motor","engine"],
-
-["Potencia","power"],
-
-["Transmisión","transmission"],
-
-["Combustible","fuel"],
-
-["Tracción","drive"],
-
-["Pasajeros","seats"],
-
-["Estado","condition"]
-
-];
-
-
-modalBody.innerHTML=`
-
-<div style="overflow:auto">
-
-<table class="compare-table">
-
-<thead>
-
-<tr>
-
-<th>
-Característica
-</th>
-
-${selected.map(vehicle=>`
-
-<th>
-${vehicle.brand}<br>
-${vehicle.model}
-</th>
-
-`).join("")}
-
-</tr>
-
-</thead>
-
-<tbody>
-
-${rows.map(row=>`
-
-<tr>
-
-<td>
-<strong>
-${row[0]}
-</strong>
-</td>
-
-${selected.map(vehicle=>`
-
-<td>
-
-${
-row[1]==="price"
-?formatPrice(vehicle[row[1]])
-:vehicle[row[1]]
-}
-
-</td>
-
-`).join("")}
-
-</tr>
-
-`).join("")}
-
-</tbody>
-
-</table>
-
-</div>
-
-`;
-
-modal.classList.add("active");
-
-}
-
-
-function clearCompare(){
-
-compareList=[];
-
-renderVehicles();
-
-}
-
-
-/* ============================================================
-   MODAL
-============================================================ */
-
-function closeModal(){
-
-modal.classList.remove("active");
-
-}
-
-modal.addEventListener(
-"click",
-event=>{
-
-if(event.target===modal){
-
-closeModal();
-
-}
-
-}
-);
-
-
-/* ============================================================
-   FILTROS
-============================================================ */
-
-function clearFilters(){
-
-search.value="";
-
-category.value="";
-
-brand.value="";
-
-fuel.value="";
-
-drive.value="";
-
-sort.value="featured";
-
-renderVehicles();
-
-}
-
-
-function selectCategory(value){
-
-category.value=value;
-
-renderVehicles();
-
-document
-.getElementById("catalogo")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* ============================================================
-   BUSCAR
-============================================================ */
-
-function buscar(){
-
-document
-.getElementById("catalogo")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-setTimeout(
-()=>{
-search.focus();
-},
-500
-);
-
-}
-
-
-/* ============================================================
-   MOBILE MENU
-============================================================ */
-
-function menuMobile(){
-
-const nav=document.querySelector(".nav-links");
-
-if(nav.style.display==="flex"){
-
-nav.style.display="";
-
-}else{
-
-nav.style.display="flex";
-
-nav.style.position="absolute";
-
-nav.style.top="80px";
-
-nav.style.left="13px";
-
-nav.style.right="13px";
-
-nav.style.padding="20px";
-
-nav.style.background="#111";
-
-nav.style.border="1px solid #2b2925";
-
-nav.style.borderRadius="15px";
-
-nav.style.flexDirection="column";
-
-}
-
-}
-
-
-/* ============================================================
-   TOAST
-============================================================ */
-
-function showToast(message){
-
-toastElement.textContent=message;
-
-toastElement.classList.add("show");
-
-clearTimeout(window.toastTimer);
-
-window.toastTimer=setTimeout(
-()=>{
-toastElement.classList.remove("show");
-},
-2000
-);
-
-}
-
-
-/* ============================================================
-   COUNTERS
-============================================================ */
-
-function updateCounters(){
-
-document.getElementById(
-"totalVehicles"
-).textContent=
-vehicles.length;
-
-document.getElementById(
-"totalFavorites"
-).textContent=
-favorites.size;
-
-document.getElementById(
-"totalCompare"
-).textContent=
-compareList.length;
-
-document.getElementById(
-"compareNumber"
-).textContent=
-compareList.length;
-
-document
-.getElementById("compareBar")
-.classList.toggle(
-"active",
-compareList.length>0
-);
-
-}
-
-
-/* ============================================================
-   HEADER SCROLL
-============================================================ */
-
-window.addEventListener(
-"scroll",
-()=>{
-
-document
-.getElementById("header")
-.classList.toggle(
-"scrolled",
-window.scrollY>30
-);
-
-}
-);
-
-
-/* ============================================================
-   INICIAR PAGINA
-============================================================ */
-
-renderVehicles();
-
-</script>
+  </script>
 
 </body>
 </html>

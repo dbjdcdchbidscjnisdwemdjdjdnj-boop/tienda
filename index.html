@@ -3,21 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda</title>
+
+    <title>AutoMax - Tienda de Carros</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .hero {
+            min-height: 500px;
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #c1121f;
+        }
+
+        .section {
+            padding: 60px 8%;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .search {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .cars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .car {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,.12);
+            transition: .3s;
+        }
+
+        .car:hover {
+            transform: translateY(-7px);
+        }
+
+        .car img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .car-info {
+            padding: 20px;
+        }
+
+        .car-info h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .car-info p {
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #e63946;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .about {
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.1);
+        }
+
+        .contact-box p {
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #050505;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 8px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Mi Tienda</h1>
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            Auto<span>Max</span>
+        </div>
 
-    <h2>Productos</h2>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#carros">Carros</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <div>
-        <h3>Producto 1</h3>
-        <p>Descripción del producto</p>
-        <p>Precio: $20.000</p>
-        <button>Comprar</button>
-    </div>
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+        <div>
+            <h1>Encuentra tu próximo carro</h1>
+
+            <p>
+                Los mejores vehículos en un solo lugar.
+            </p>
+
+            <a href="#carros" class="btn">
+                Ver carros
+            </a>
+        </div>
+    </section>
+
+
+    <!-- CARROS -->
+    <section class="section" id="carros">
+
+        <h2>Vehículos disponibles</h2>
+
+        <div class="search">
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Buscar un carro..."
+                onkeyup="buscarCarro()"
+            >
+        </div>
+
+        <div class="cars" id="listaCarros">
+
+            <!-- CARRO 1 -->
+            <div class="car">
+                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80">
+
+                <div class="car-info">
+                    <h3>Ford Mustang</h3>
+
+                    <p>Año: 2024</p>
+                    <p>Motor: 5.0L</p>
+                    <p>Automático</p>
+
+                    <div class="price">
+                        $180.000.000
+                    </div>
+
+                    <button class="btn" onclick="comprar('Ford Mustang')">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- CARRO 2 -->
+            <div class="car">
+                <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80">
+
+                <div class="car-info">
+                    <h3>BMW M4</h3>
+
+                    <p>Año: 2025</p>
+                    <p>Motor: 3.0L Turbo</p>
+                    <p>Automático</p>
+
+                    <div class="price">
+                        $320.000.000
+                    </div>
+
+                    <button class="btn" onclick="comprar('BMW M4')">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- CARRO 3 -->
+            <div class="car">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80">
+
+                <div class="car-info">
+                    <h3>Mercedes-Benz</h3>
+
+                    <p>Año: 2025</p>
+                    <p>Motor: 3.0L</p>
+                    <p>Automático</p>
+
+                    <div class="price">
+                        $280.000.000
+                    </div>
+
+                    <button class="btn" onclick="comprar('Mercedes-Benz')">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- CARRO 4 -->
+            <div class="car">
+                <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=80">
+
+                <div class="car-info">
+                    <h3>Porsche 911</h3>
+
+                    <p>Año: 2024</p>
+                    <p>Motor: 3.0L Turbo</p>
+                    <p>Automático</p>
+
+                    <div class="price">
+                        $550.000.000
+                    </div>
+
+                    <button class="btn" onclick="comprar('Porsche 911')">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+    <section class="section about" id="nosotros">
+
+        <h2>Sobre AutoMax</h2>
+
+        <p>
+            Somos una tienda dedicada a la venta de vehículos nuevos
+            y usados. Nuestro objetivo es ofrecer carros de calidad,
+            excelentes precios y una atención confiable para nuestros clientes.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="section contact" id="contacto">
+
+        <h2>Contáctanos</h2>
+
+        <div class="contact-box">
+
+            <p>📍 Medellín, Colombia</p>
+
+            <p>📞 +57 300 000 0000</p>
+
+            <p>📧 automax@gmail.com</p>
+
+            <button class="btn" onclick="contactar()">
+                Contactar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>
+            © 2026 AutoMax - Todos los derechos reservados
+        </p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function comprar(carro) {
+            alert(
+                "¡Excelente elección! Has seleccionado: " + carro
+            );
+        }
+
+        function contactar() {
+            alert(
+                "Gracias por contactar a AutoMax. Pronto nos comunicaremos contigo."
+            );
+        }
+
+        function buscarCarro() {
+
+            let texto =
+                document.getElementById("buscador").value.toLowerCase();
+
+            let carros =
+                document.querySelectorAll(".car");
+
+            carros.forEach(function(car) {
+
+                let nombre =
+                    car.querySelector("h3").textContent.toLowerCase();
+
+                if (nombre.includes(texto)) {
+                    car.style.display = "block";
+                } else {
+                    car.style.display = "none";
+                }
+
+            });
+        }
+
+    </script>
 
 </body>
 </html>

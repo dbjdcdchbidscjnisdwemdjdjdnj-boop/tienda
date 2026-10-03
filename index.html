@@ -2,498 +2,2997 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JT Motors | Concesionario Premium</title>
-<meta name="description" content="JT Motors: autos, SUV, camionetas y motos. Catálogo, fichas técnicas, precios de referencia y comparación.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JT Motors - Motos, autos, camionetas, SUV y cuatrimotos.">
+<title>JT MOTORS | Premium Vehicles</title>
+
 <style>
-:root{--bg:#06080c;--panel:#0d1219;--panel2:#121923;--line:#26313d;--text:#f5f7fa;--muted:#9aa7b5;--a:#2ee27d;--b:#2aa7ff;--danger:#ff5570}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% -10%,#183149 0,#06080c 35%);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}
-header{position:sticky;top:0;z-index:50;background:#070a0edc;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.nav{max-width:1400px;margin:auto;padding:13px 20px;display:flex;align-items:center;gap:14px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:white}.mark{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-weight:1000;font-size:20px;background:linear-gradient(135deg,var(--a),var(--b));color:#06100b;box-shadow:0 8px 30px #2aa7ff35}.brand b{font-size:20px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}.navlinks{margin-left:auto;display:flex;gap:18px}.navlinks a{color:#c9d2dd;text-decoration:none;font-size:14px}.navlinks a:hover{color:white}
-.hero{max-width:1400px;margin:auto;padding:70px 20px 35px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}.eyebrow{color:var(--a);font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:12px}h1{font-size:clamp(42px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:12px 0 22px}.hero p{font-size:18px;line-height:1.65;color:var(--muted);max-width:720px}.heroBtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:12px;padding:13px 17px;font-weight:800;background:linear-gradient(135deg,var(--a),var(--b));color:#06100b}.btn.secondary{background:#111821;color:white;border:1px solid var(--line)}.showcase{min-height:340px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#142131,#090c11);position:relative;overflow:hidden;display:grid;place-items:center}.showcase:before{content:"JT";font-size:210px;font-weight:1000;color:#ffffff05;position:absolute;transform:rotate(-12deg)}.carshape{font-size:130px;filter:drop-shadow(0 25px 25px #000);position:relative}
-.stats{max-width:1400px;margin:0 auto 25px;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{padding:20px;border:1px solid var(--line);background:#0c1118;border-radius:17px}.stat b{font-size:25px}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
-.section{max-width:1400px;margin:auto;padding:25px 20px 60px}.sectionTitle{display:flex;justify-content:space-between;gap:15px;align-items:end;margin-bottom:18px}.sectionTitle h2{font-size:32px;margin:0}.sectionTitle p{color:var(--muted);margin:6px 0 0}
-.filters{position:sticky;top:71px;z-index:30;background:#090d13ee;border:1px solid var(--line);padding:14px;border-radius:18px;display:grid;grid-template-columns:2fr repeat(5,1fr) auto;gap:9px;margin-bottom:18px;backdrop-filter:blur(15px)}input,select{width:100%;background:#0d141c;color:white;border:1px solid var(--line);padding:12px;border-radius:11px;outline:none}input:focus,select:focus{border-color:var(--b)}.reset{background:#161d26;color:#fff;border:1px solid var(--line);border-radius:11px;padding:0 14px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:linear-gradient(180deg,#101721,#0b0f15);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s;position:relative}.card:hover{transform:translateY(-3px);border-color:#3b5368}.visual{height:170px;background:radial-gradient(circle at 50% 35%,#21364b,#0b1017 65%);display:grid;place-items:center;position:relative}.visual .emoji{font-size:76px;filter:drop-shadow(0 18px 14px #000)}.tag{position:absolute;top:10px;left:10px;padding:6px 9px;border-radius:99px;background:#05080dcc;border:1px solid #ffffff19;font-size:10px;font-weight:900}.heart{position:absolute;right:10px;top:10px;border:0;border-radius:50%;width:35px;height:35px;background:#05080dcc;color:white}.heart.active{color:#ff5870}.cardbody{padding:15px}.brandline{color:var(--a);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px}.card h3{margin:5px 0 4px;font-size:19px}.price{font-size:19px;font-weight:900;margin:10px 0}.muted{color:var(--muted);font-size:12px}.chips{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}.chip{font-size:10px;padding:5px 7px;border-radius:7px;background:#151d27;color:#cbd5df}.cardactions{display:flex;gap:7px}.cardactions button{flex:1;border:0;border-radius:10px;padding:10px;background:#16202b;color:#fff;font-weight:800}.cardactions .primary{background:linear-gradient(135deg,var(--a),var(--b));color:#06100b}
-.empty{padding:45px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted);grid-column:1/-1}
-footer{border-top:1px solid var(--line);padding:35px 20px;color:var(--muted);text-align:center}.legal{font-size:11px;max-width:900px;margin:auto;line-height:1.6}
-.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal.open{display:flex}.modalbox{max-width:900px;width:100%;max-height:90vh;overflow:auto;background:#0c1219;border:1px solid var(--line);border-radius:24px;padding:25px;position:relative}.close{position:absolute;right:15px;top:15px;border:0;background:#17202b;color:#fff;border-radius:10px;padding:8px 12px}.modalgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:25px}.bigvisual{min-height:310px;border-radius:20px;background:radial-gradient(circle,#243c52,#0a0f15 65%);display:grid;place-items:center;font-size:145px}.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:15px}.spec{padding:11px;border:1px solid var(--line);border-radius:10px;background:#101720}.spec span{display:block;color:var(--muted);font-size:10px}.spec b{font-size:13px}.compareBar{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:60;background:#0d141cf2;border:1px solid var(--line);border-radius:15px;padding:10px 14px;display:none;gap:10px;align-items:center;box-shadow:0 15px 45px #000}.compareBar.show{display:flex}.toast{position:fixed;right:20px;bottom:20px;background:#101820;border:1px solid var(--line);padding:13px 16px;border-radius:12px;display:none;z-index:200}.toast.show{display:block}
-@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}.filters{grid-template-columns:2fr repeat(3,1fr)}.hero{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.modalgrid{grid-template-columns:1fr}}
-@media(max-width:700px){.navlinks{display:none}.grid{grid-template-columns:repeat(2,1fr)}.filters{position:static;grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.stats{grid-template-columns:1fr 1fr}.card h3{font-size:16px}.visual{height:140px}.visual .emoji{font-size:58px}}
-@media(max-width:470px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.sectionTitle{display:block}}
+:root{
+    --bg:#070707;
+    --bg2:#101010;
+    --card:#151515;
+    --gold:#d9b56a;
+    --gold-light:#f3d99a;
+    --white:#f7f5ef;
+    --gray:#aaa69d;
+    --border:#2b2925;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    transition:.3s;
+}
+
+header.scrolled{
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.nav{
+    width:min(1400px,calc(100% - 40px));
+    min-height:80px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-jt{
+    font-size:32px;
+    font-weight:1000;
+    font-style:italic;
+    letter-spacing:-5px;
+    color:var(--gold);
+}
+
+.logo-text strong{
+    display:block;
+    font-size:18px;
+    letter-spacing:4px;
+}
+
+.logo-text span{
+    display:block;
+    font-size:8px;
+    letter-spacing:4px;
+    color:#999;
+    margin-top:4px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:12px;
+    letter-spacing:1.5px;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:var(--gold-light);
+}
+
+.nav-buttons{
+    display:flex;
+    gap:8px;
+}
+
+.icon-button{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#0009;
+    border:1px solid #ffffff22;
+    color:var(--gold-light);
+}
+
+.menu-button{
+    display:none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.78),
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.05)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.85),
+            transparent 55%
+        ),
+        url("hero-jt.png");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:min(1400px,calc(100% - 40px));
+    margin:auto;
+    padding:170px 0 170px;
+}
+
+.hero-small{
+    color:var(--gold-light);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(60px,9vw,125px);
+    line-height:.82;
+    letter-spacing:-7px;
+    margin:25px 0;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero h2{
+    font-size:clamp(16px,2vw,25px);
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:600px;
+    color:#ddd;
+    line-height:1.7;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 20px;
+    border-radius:10px;
+    border:1px solid transparent;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-gold{
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#17120a;
+}
+
+.btn-dark{
+    background:#080808aa;
+    border-color:#ffffff30;
+}
+
+/* =========================
+   HERO INFO
+========================= */
+
+.hero-info{
+    position:absolute;
+    z-index:4;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1240px,calc(100% - 40px));
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    background:#080808d9;
+    border:1px solid #ffffff20;
+    border-radius:18px;
+    backdrop-filter:blur(15px);
+    overflow:hidden;
+}
+
+.hero-info-box{
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border-right:1px solid #ffffff18;
+}
+
+.hero-info-box:last-child{
+    border-right:none;
+}
+
+.hero-info-icon{
+    font-size:25px;
+    color:var(--gold);
+}
+
+.hero-info-box strong{
+    display:block;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.hero-info-box small{
+    display:block;
+    color:#999;
+    font-size:9px;
+    margin-top:4px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:100px 0;
+}
+
+.container{
+    width:min(1400px,calc(100% - 40px));
+    margin:auto;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:35px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-title{
+    font-size:clamp(38px,5vw,60px);
+    letter-spacing:-3px;
+    margin-top:8px;
+}
+
+.section-description{
+    max-width:550px;
+    color:var(--gray);
+    line-height:1.7;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.stat{
+    padding:23px;
+    background:linear-gradient(180deg,#151515,#0d0d0d);
+    border:1px solid var(--border);
+    border-radius:16px;
+}
+
+.stat strong{
+    display:block;
+    font-size:30px;
+    color:var(--gold-light);
+}
+
+.stat span{
+    display:block;
+    color:#999;
+    font-size:10px;
+    margin-top:5px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters{
+    display:grid;
+    grid-template-columns:1.5fr repeat(4,1fr) auto;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.input,
+.select{
+    width:100%;
+    padding:13px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#111;
+    color:#fff;
+}
+
+.input:focus,
+.select:focus{
+    outline:1px solid var(--gold);
+}
+
+/* =========================
+   VEHICLE GRID
+========================= */
+
+.vehicle-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.vehicle-card{
+    background:linear-gradient(180deg,#151515,#0c0c0c);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.vehicle-card:hover{
+    transform:translateY(-6px);
+    border-color:#8c703e;
+    box-shadow:0 25px 60px #000;
+}
+
+.vehicle-image{
+    height:210px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4c3b21,
+            #090909 68%
+        );
+}
+
+.vehicle-image span{
+    font-size:78px;
+    filter:drop-shadow(0 20px 20px #000);
+}
+
+.vehicle-tag{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#000b;
+    border:1px solid #ffffff20;
+    padding:6px 9px;
+    border-radius:20px;
+    font-size:10px;
+    color:var(--gold-light);
+}
+
+.favorite{
+    position:absolute;
+    right:12px;
+    top:12px;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#000b;
+    border:1px solid #ffffff20;
+    color:#fff;
+}
+
+.favorite.active{
+    color:#ff5570;
+}
+
+.vehicle-content{
+    padding:17px;
+}
+
+.brand{
+    color:var(--gold);
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.vehicle-content h3{
+    margin:6px 0;
+    font-size:19px;
+}
+
+.vehicle-meta{
+    color:#999;
+    font-size:11px;
+}
+
+.price{
+    color:var(--gold-light);
+    font-size:21px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:12px;
+}
+
+.chip{
+    padding:6px 8px;
+    border:1px solid #292929;
+    border-radius:7px;
+    color:#aaa;
+    background:#171717;
+    font-size:10px;
+}
+
+.card-buttons{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+}
+
+.card-button{
+    flex:1;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:#161616;
+    color:#fff;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.card-button.gold{
+    background:var(--gold);
+    color:#17120a;
+    border-color:var(--gold);
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.category-card{
+    position:relative;
+    min-height:190px;
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    background:linear-gradient(135deg,#181818,#0b0b0b);
+    transition:.25s;
+}
+
+.category-card:hover{
+    transform:translateY(-5px);
+    border-color:#8c703e;
+}
+
+.category-icon{
+    font-size:45px;
+}
+
+.category-card h3{
+    margin-top:25px;
+    margin-bottom:7px;
+}
+
+.category-card p{
+    color:#999;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.service{
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:linear-gradient(135deg,#171717,#0c0c0c);
+}
+
+.service-icon{
+    color:var(--gold);
+    font-size:32px;
+}
+
+.service h3{
+    margin:18px 0 8px;
+}
+
+.service p{
+    color:#999;
+    line-height:1.7;
+    font-size:12px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:55px;
+    border:1px solid #806638;
+    border-radius:28px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #46351d,
+            #111 50%
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.cta h2{
+    font-size:clamp(40px,5vw,65px);
+    letter-spacing:-3px;
+    margin-top:8px;
+}
+
+.cta p{
+    color:#bbb;
+    line-height:1.7;
+    max-width:600px;
+    margin-top:12px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:#000c;
+    backdrop-filter:blur(10px);
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(900px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#111;
+    border:1px solid #ffffff22;
+    border-radius:22px;
+}
+
+.modal-header{
+    padding:22px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.modal-close{
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+}
+
+.modal-body{
+    padding:25px;
+}
+
+.spec-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.spec{
+    background:#171717;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px;
+}
+
+.spec span{
+    display:block;
+    color:#888;
+    font-size:10px;
+    margin-bottom:6px;
+}
+
+.spec strong{
+    font-size:13px;
+}
+
+/* =========================
+   COMPARE
+========================= */
+
+.compare-bar{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:2000;
+    display:none;
+    align-items:center;
+    gap:12px;
+    padding:13px 15px;
+    border:1px solid #806638;
+    background:#111;
+    border-radius:15px;
+    box-shadow:0 20px 60px #000;
+}
+
+.compare-bar.active{
+    display:flex;
+}
+
+.compare-count{
+    color:var(--gold-light);
+    font-weight:bold;
+}
+
+.compare-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+
+.compare-table th,
+.compare-table td{
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid var(--border);
+}
+
+.compare-table th{
+    color:var(--gold-light);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:4000;
+    padding:14px 17px;
+    border:1px solid #806638;
+    border-radius:10px;
+    background:#151515;
+    transform:translateY(120px);
+    transition:.3s;
+}
+
+.toast.show{
+    transform:translateY(0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:35px 0;
+    color:#777;
+    font-size:11px;
+}
+
+.footer-content{
+    display:flex;
+    justify-content:space-between;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    .nav-buttons{
+        display:none;
+    }
+
+    .vehicle-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .filters{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-info{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-info-box:nth-child(2){
+        border-right:none;
+    }
+}
+
+@media(max-width:700px){
+
+    .container,
+    .nav,
+    .hero-content{
+        width:calc(100% - 26px);
+    }
+
+    .hero{
+        min-height:900px;
+    }
+
+    .hero-image{
+        background-position:60% center;
+    }
+
+    .hero-content{
+        padding-top:140px;
+        padding-bottom:310px;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-4px;
+    }
+
+    .hero-info{
+        width:calc(100% - 26px);
+        bottom:12px;
+    }
+
+    .hero-info-box{
+        padding:13px;
+    }
+
+    .hero-info-box strong{
+        font-size:8px;
+    }
+
+    .hero-info-box small{
+        display:none;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .section-header{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:15px;
+    }
+
+    .vehicle-grid,
+    .categories,
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        display:block;
+        padding:35px;
+    }
+
+    .cta .btn{
+        margin-top:20px;
+    }
+
+    .spec-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-content{
+        display:block;
+    }
+}
 </style>
 </head>
+
 <body>
-<header><nav class="nav">
-<a class="brand" href="#"><div class="mark">JT</div><div><b>JT MOTORS</b><small>PREMIUM VEHICLES</small></div></a>
-<div class="navlinks"><a href="#catalogo">Catálogo</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div>
-</nav></header>
 
-<main>
-<section class="hero">
-<div><div class="eyebrow">Concesionario digital</div><h1>Encuentra tu<br><span style="color:var(--a)">próximo vehículo.</span></h1>
-<p>Autos, SUV, camionetas y motocicletas en un catálogo moderno. Busca, filtra, compara y consulta la ficha técnica de cada vehículo.</p>
-<div class="heroBtns"><a class="btn" href="#catalogo">Ver catálogo</a><button class="btn secondary" onclick="showFavorites()">♡ Mis favoritos</button></div></div>
-<div class="showcase"><div class="carshape">🚘</div></div>
-</section>
+<header id="header">
 
-<section class="stats">
-<div class="stat"><b id="count">0</b><span>vehículos en catálogo</span></div><div class="stat"><b>4</b><span>categorías</span></div><div class="stat"><b>24/7</b><span>catálogo online</span></div><div class="stat"><b>JT</b><span>selección premium</span></div>
-</section>
+<div class="nav">
 
-<section class="section" id="catalogo">
-<div class="sectionTitle"><div><h2>Catálogo JT</h2><p>Consulta precio de referencia, características y equipamiento.</p></div><strong id="resultCount"></strong></div>
-<div class="filters">
-<input id="search" placeholder="🔎 Buscar marca, modelo, motor..." oninput="render()">
-<select id="category" onchange="render()"><option value="">Todas las categorías</option><option>Auto</option><option>SUV</option><option>Camioneta</option><option>Moto</option></select>
-<select id="brand" onchange="render()"><option value="">Todas las marcas</option></select>
-<select id="fuel" onchange="render()"><option value="">Combustible</option><option>Gasolina</option><option>Diésel</option><option>Híbrido</option><option>Eléctrico</option></select>
-<select id="drive" onchange="render()"><option value="">Tracción</option><option>4x2</option><option>4x4</option><option>AWD</option><option>Cadena</option></select>
-<select id="sort" onchange="render()"><option value="featured">Orden: destacados</option><option value="low">Precio menor</option><option value="high">Precio mayor</option><option value="name">Nombre A-Z</option></select>
-<button class="reset" onclick="resetFilters()">Limpiar</button>
+<a href="#inicio" class="logo">
+
+<div class="logo-jt">
+JT
 </div>
-<div class="grid" id="grid"></div>
-</section>
 
-<section class="section" id="servicios">
-<div class="sectionTitle"><div><h2>Servicios JT</h2><p>Información demostrativa para la página del concesionario.</p></div></div>
-<div class="grid" style="grid-template-columns:repeat(3,1fr)">
-<div class="stat"><b>🔍</b><h3>Compra informada</h3><span>Ficha técnica y equipamiento organizado por vehículo.</span></div>
-<div class="stat"><b>🔁</b><h3>Comparación</h3><span>Selecciona hasta tres vehículos y compara sus datos.</span></div>
-<div class="stat"><b>🛡️</b><h3>Blindaje</h3><span>La ficha indica si el modelo se ofrece con blindaje de fábrica, opcional o no reportado.</span></div>
+<div class="logo-text">
+<strong>JT MOTORS</strong>
+<span>PREMIUM VEHICLES</span>
 </div>
-</section>
-</main>
 
-<footer id="contacto"><b style="color:white;font-size:20px">JT MOTORS</b><p>Catálogo digital de vehículos</p><div class="legal">Precios y especificaciones marcados como “referencia” son orientativos y pueden cambiar según año-modelo, versión, país, impuestos, equipamiento, disponibilidad y estado del vehículo. El blindaje depende de la versión, homologación y proveedor. Verifica siempre la ficha oficial antes de una compra.</div></footer>
-<div class="compareBar" id="compareBar"><span id="compareText"></span><button class="btn" onclick="compare()">Comparar</button><button class="reset" onclick="clearCompare()">Limpiar</button></div>
-<div class="toast" id="toast"></div>
+</a>
 
-<script>
-const base=[
-["Mercedes-Benz","GLE 450 4MATIC","SUV","Gasolina","AWD","$520.000.000","3.0L turbo I6 + híbrido ligero","375 hp","9G-TRONIC","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Mercedes-Benz","GLE 53 AMG","SUV","Gasolina","AWD","$650.000.000","3.0L turbo I6","429 hp","9G-TRONIC AMG","5","Negro / Gris / Blanco","Referencia","No de fábrica"],
-["Mercedes-Benz","GLE 63 S AMG","SUV","Gasolina","AWD","$890.000.000","4.0L V8 biturbo + híbrido","603 hp","9G-TRONIC AMG","5","Negro / Gris / Blanco","Referencia","No de fábrica"],
-["Mercedes-Benz","G 63 AMG","SUV","Gasolina","4x4","$1.050.000.000","4.0L V8 biturbo","577 hp","9G-TRONIC","5","Negro / Verde / Blanco","Referencia","No de fábrica"],
-["Toyota","4Runner","SUV","Gasolina","4x4","$310.000.000","2.4L turbo","278 hp","Automática 8 vel.","7","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Toyota","4Runner i-FORCE MAX","SUV","Híbrido","4x4","$370.000.000","2.4L turbo híbrido","326 hp","Automática 8 vel.","7","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Toyota","Fortuner","SUV","Diésel","4x4","$235.000.000","2.8L turbodiésel","201 hp","Automática","7","Blanco / Negro / Plata","Referencia","No de fábrica"],
-["Toyota","Tacoma TRD Pro","Camioneta","Gasolina","4x4","$340.000.000","3.4L V6 twin-turbo","326 hp","Automática 10 vel.","5","Rojo / Negro / Gris","Referencia","No de fábrica"],
-["Toyota","Hilux GR Sport","Camioneta","Diésel","4x4","$250.000.000","2.8L turbodiésel","201 hp","Automática","5","Blanco / Rojo / Negro","Referencia","No de fábrica"],
-["Chevrolet","Silverado ZR2","Camioneta","Gasolina","4x4","$360.000.000","6.2L V8","420 hp","Automática 10 vel.","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Ford","Ranger Raptor","Camioneta","Gasolina","4x4","$330.000.000","3.0L EcoBoost V6 biturbo","405 hp","Automática 10 vel.","5","Azul / Negro / Naranja","Referencia","No de fábrica"],
-["Ford","Ranger XLT","Camioneta","Diésel","4x4","$190.000.000","2.0L biturbo diésel","210 hp","Automática 10 vel.","5","Blanco / Gris / Negro","Referencia","No de fábrica"],
-["Ford","F-150 Raptor","Camioneta","Gasolina","4x4","$480.000.000","3.5L EcoBoost V6","450 hp","Automática 10 vel.","5","Azul / Negro / Gris","Referencia","No de fábrica"],
-["Nissan","Patrol","SUV","Gasolina","4x4","$430.000.000","3.5L V6 biturbo","425 hp","Automática 9 vel.","7","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Jeep","Wrangler Rubicon","SUV","Gasolina","4x4","$330.000.000","2.0L turbo","270 hp","Automática 8 vel.","5","Verde / Negro / Blanco","Referencia","No de fábrica"],
-["Jeep","Wrangler Sahara","SUV","Gasolina","4x4","$290.000.000","2.0L turbo","270 hp","Automática 8 vel.","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Ford","Fusion Titanium","Auto","Gasolina","4x2","$105.000.000","2.0L EcoBoost","245 hp","Automática","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Chevrolet","Onix Premier","Auto","Gasolina","4x2","$95.000.000","1.0L turbo","115 hp","Automática","5","Rojo / Blanco / Gris","Referencia","No de fábrica"],
-["Kia","Sportage","SUV","Gasolina","AWD","$170.000.000","1.6L turbo","180 hp","Automática","5","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Hyundai","Tucson","SUV","Gasolina","AWD","$175.000.000","1.6L turbo","180 hp","Automática","5","Blanco / Negro / Azul","Referencia","No de fábrica"],
-["Mazda","CX-5","SUV","Gasolina","AWD","$165.000.000","2.5L Skyactiv-G","187 hp","Automática 6 vel.","5","Rojo / Blanco / Gris","Referencia","No de fábrica"],
-["Volkswagen","Amarok V6","Camioneta","Diésel","4x4","$250.000.000","3.0L V6 turbodiésel","255 hp","Automática","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["BMW","X5 xDrive40i","SUV","Gasolina","AWD","$460.000.000","3.0L turbo I6","375 hp","Automática 8 vel.","5","Negro / Blanco / Azul","Referencia","No de fábrica"],
-["Audi","Q8","SUV","Gasolina","AWD","$450.000.000","3.0L turbo V6","335 hp","Tiptronic","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Porsche","Cayenne","SUV","Gasolina","AWD","$520.000.000","3.0L turbo V6","348 hp","Tiptronic","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Lexus","GX 550","SUV","Gasolina","4x4","$430.000.000","3.4L V6 biturbo","349 hp","Automática 10 vel.","7","Negro / Blanco / Verde","Referencia","No de fábrica"],
-["Land Rover","Defender 110","SUV","Gasolina","4x4","$480.000.000","3.0L turbo I6","395 hp","Automática 8 vel.","7","Verde / Negro / Blanco","Referencia","No de fábrica"],
-["RAM","1500 Rebel","Camioneta","Gasolina","4x4","$390.000.000","5.7L V8","395 hp","Automática 8 vel.","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Mitsubishi","L200","Camioneta","Diésel","4x4","$175.000.000","2.4L turbodiésel","181 hp","Automática","5","Blanco / Gris / Negro","Referencia","No de fábrica"],
-["Suzuki","Jimny","SUV","Gasolina","4x4","$120.000.000","1.5L 4 cilindros","102 hp","Manual/Automática","4","Verde / Blanco / Gris","Referencia","No de fábrica"],
-["Honda","CR-V Hybrid","SUV","Híbrido","AWD","$250.000.000","2.0L híbrido","204 hp","e-CVT","5","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Tesla","Model Y","SUV","Eléctrico","AWD","$250.000.000","Dual Motor eléctrico","456 hp aprox.","Automática eléctrica","5","Blanco / Negro / Azul","Referencia","No de fábrica"],
-["Ford","Mustang GT","Auto","Gasolina","4x2","$280.000.000","5.0L V8","480 hp","Automática 10 vel.","4","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Chevrolet","Camaro SS","Auto","Gasolina","4x2","$260.000.000","6.2L V8","455 hp","Automática","4","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Dodge","Charger R/T","Auto","Gasolina","4x2","$270.000.000","5.7L V8","370 hp","Automática","5","Negro / Gris / Blanco","Referencia","No de fábrica"],
-["Nissan","Z","Auto","Gasolina","4x2","$250.000.000","3.0L V6 biturbo","400 hp","Manual/Automática","2","Amarillo / Negro / Blanco","Referencia","No de fábrica"],
-["Toyota","GR Supra","Auto","Gasolina","4x2","$300.000.000","3.0L turbo I6","382 hp","Automática/Manual","2","Blanco / Rojo / Negro","Referencia","No de fábrica"],
-["BMW","M3 Competition","Auto","Gasolina","4x2","$470.000.000","3.0L I6 biturbo","503 hp","Automática","5","Verde / Negro / Blanco","Referencia","No de fábrica"],
-["BMW","M4 Competition","Auto","Gasolina","4x2","$480.000.000","3.0L I6 biturbo","503 hp","Automática","4","Verde / Negro / Blanco","Referencia","No de fábrica"],
-["Audi","RS 6 Avant","Auto","Gasolina","AWD","$650.000.000","4.0L V8 biturbo","621 hp","Tiptronic","5","Gris / Negro / Blanco","Referencia","No de fábrica"],
-["Porsche","911 Carrera","Auto","Gasolina","4x2","$620.000.000","3.0L boxer turbo","379 hp","PDK","2+2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Toyota","Land Cruiser 300","SUV","Diésel","4x4","$480.000.000","3.3L V6 turbodiésel","304 hp","Automática 10 vel.","7","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Lexus","LX 600","SUV","Gasolina","4x4","$650.000.000","3.4L V6 biturbo","409 hp","Automática 10 vel.","7","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Cadillac","Escalade","SUV","Gasolina","4x4","$620.000.000","6.2L V8","420 hp","Automática 10 vel.","7","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["GMC","Yukon Denali","SUV","Gasolina","4x4","$520.000.000","6.2L V8","420 hp","Automática 10 vel.","7","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Chevrolet","Tahoe","SUV","Gasolina","4x4","$400.000.000","5.3L V8","355 hp","Automática 10 vel.","7","Negro / Blanco / Blanco","Referencia","No de fábrica"],
-["Ford","Explorer ST","SUV","Gasolina","AWD","$310.000.000","3.0L EcoBoost V6","400 hp","Automática 10 vel.","7","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Ford","Bronco Wildtrak","SUV","Gasolina","4x4","$330.000.000","2.7L V6 EcoBoost","315 hp","Automática 10 vel.","5","Verde / Azul / Negro","Referencia","No de fábrica"],
-<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">✕</button><div id="modalContent"></div></div></div>
-  ["Toyota","Tundra TRD Pro","Camioneta","Híbrido","4x4","$390.000.000","3.4L V6 twin-turbo híbrido","437 hp","Automática 10 vel.","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Chevrolet","Colorado ZR2","Camioneta","Gasolina","4x4","$280.000.000","2.7L turbo","310 hp","Automática 8 vel.","5","Negro / Rojo / Gris","Referencia","No de fábrica"],
-["Nissan","Frontier PRO-4X","Camioneta","Diésel","4x4","$210.000.000","2.3L turbodiésel","190 hp","Automática","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Jeep","Grand Cherokee","SUV","Gasolina","4x4","$320.000.000","3.6L V6","293 hp","Automática 8 vel.","5","Negro / Blanco / Gris","Referencia","No de fábrica"],
-["Jeep","Grand Cherokee 4xe","SUV","Híbrido","4x4","$410.000.000","2.0L turbo híbrido","375 hp","Automática 8 vel.","5","Negro / Blanco / Azul","Referencia","No de fábrica"],
-["Volvo","XC90","SUV","Híbrido","AWD","$360.000.000","2.0L turbo/supercargado híbrido","455 hp","Automática","7","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Volvo","EX90","SUV","Eléctrico","AWD","$520.000.000","Dual Motor eléctrico","496 hp aprox.","Automática eléctrica","7","Blanco / Negro / Azul","Referencia","No de fábrica"],
-["Kia","EV9","SUV","Eléctrico","AWD","$360.000.000","Dual Motor eléctrico","379 hp aprox.","Automática eléctrica","7","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Hyundai","Santa Fe","SUV","Híbrido","AWD","$240.000.000","1.6L turbo híbrido","231 hp aprox.","Automática","7","Blanco / Negro / Verde","Referencia","No de fábrica"],
-["Mazda","CX-90","SUV","Gasolina","AWD","$280.000.000","3.3L turbo I6","280 hp aprox.","Automática 8 vel.","8","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Volkswagen","Tiguan","SUV","Gasolina","AWD","$190.000.000","2.0L turbo","268 hp aprox.","DSG","5","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Honda","Pilot","SUV","Gasolina","AWD","$280.000.000","3.5L V6","285 hp","Automática 10 vel.","8","Blanco / Negro / Gris","Referencia","No de fábrica"],
-["Subaru","Forester","SUV","Gasolina","AWD","$170.000.000","2.5L boxer","180 hp","CVT","5","Verde / Blanco / Gris","Referencia","No de fábrica"],
-["Maserati","Levante","SUV","Gasolina","AWD","$500.000.000","3.0L V6 turbo","345 hp","Automática 8 vel.","5","Negro / Blanco / Azul","Referencia","No de fábrica"],
-["Lamborghini","Urus","SUV","Gasolina","AWD","$1.350.000.000","4.0L V8 biturbo","657 hp","Automática 8 vel.","5","Amarillo / Negro / Verde","Referencia","No de fábrica"],
-["Ferrari","Purosangue","SUV","Gasolina","AWD","$1.800.000.000","6.5L V12","715 hp","DCT","4","Rojo / Negro / Gris","Referencia","No de fábrica"],
-["Aston Martin","DBX707","SUV","Gasolina","AWD","$1.200.000.000","4.0L V8 biturbo","697 hp","Automática 9 vel.","5","Verde / Negro / Blanco","Referencia","No de fábrica"],
-["Rolls-Royce","Cullinan","SUV","Gasolina","AWD","$2.600.000.000","6.75L V12 biturbo","563 hp","Automática 8 vel.","5","Negro / Blanco / Azul","Referencia","No de fábrica"],
-["Suzuki","DR650S","Moto","Gasolina","Cadena","$38.000.000","644cc monocilíndrico 4T","Referencia","5 velocidades","1","Negro / Blanco / Azul","Referencia","No de fábrica"],
-["Yamaha","MT-09","Moto","Gasolina","Cadena","$65.000.000","890cc tricilíndrico","Referencia","6 velocidades","2","Cian / Negro / Gris","Referencia","No de fábrica"],
-["Kawasaki","Z900","Moto","Gasolina","Cadena","$65.000.000","948cc 4 cilindros","123 hp aprox.","6 velocidades","2","Verde / Negro / Gris","Referencia","No de fábrica"],
-["Kawasaki","Z1000","Moto","Gasolina","Cadena","$70.000.000","1043cc 4 cilindros","142 hp aprox.","6 velocidades","2","Verde / Negro / Gris","Referencia","No de fábrica"],
-["Yamaha","R1","Moto","Gasolina","Cadena","$105.000.000","998cc 4 cilindros","Referencia","6 velocidades","2","Azul / Negro / Blanco","Referencia","No de fábrica"],
-["Yamaha","R7","Moto","Gasolina","Cadena","$58.000.000","689cc bicilíndrico","Referencia","6 velocidades","2","Azul / Negro / Blanco","Referencia","No de fábrica"],
-["Yamaha","XTZ 250","Moto","Gasolina","Cadena","$28.000.000","249cc monocilíndrico","Referencia","5 velocidades","2","Azul / Negro / Blanco","Referencia","No de fábrica"],
-["Yamaha","NMAX 155","Moto","Gasolina","Cadena","$18.000.000","155cc monocilíndrico","Referencia","Automática CVT","2","Negro / Azul / Blanco","Referencia","No de fábrica"],
-["Honda","Africa Twin","Moto","Gasolina","Cadena","$78.000.000","1084cc bicilíndrico","Referencia","6 velocidades/DCT","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Honda","CBR650R","Moto","Gasolina","Cadena","$60.000.000","649cc 4 cilindros","Referencia","6 velocidades","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Honda","Sahara 300","Moto","Gasolina","Cadena","$25.000.000","293cc monocilíndrico","Referencia","6 velocidades","2","Rojo / Negro / Gris","Referencia","No de fábrica"],
-["BMW Motorrad","R 1300 GS","Moto","Gasolina","Cadena","$125.000.000","1300cc bóxer","Referencia","6 velocidades","2","Blanco / Negro / Azul","Referencia","No de fábrica"],
-["BMW Motorrad","S 1000 RR","Moto","Gasolina","Cadena","$110.000.000","999cc 4 cilindros","Referencia","6 velocidades","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["BMW Motorrad","F 900 GS","Moto","Gasolina","Cadena","$75.000.000","895cc bicilíndrico","Referencia","6 velocidades","2","Blanco / Negro / Amarillo","Referencia","No de fábrica"],
-["Ducati","Panigale V4","Moto","Gasolina","Cadena","$140.000.000","1103cc V4","Referencia","6 velocidades","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Ducati","Multistrada V4","Moto","Gasolina","Cadena","$125.000.000","1158cc V4","Referencia","6 velocidades","2","Rojo / Negro / Gris","Referencia","No de fábrica"],
-["KTM","1290 Super Adventure","Moto","Gasolina","Cadena","$105.000.000","1301cc V-twin","Referencia","6 velocidades","2","Naranja / Negro / Blanco","Referencia","No de fábrica"],
-["Harley-Davidson","Pan America 1250","Moto","Gasolina","Cadena","$95.000.000","1252cc V-twin","Referencia","6 velocidades","2","Negro / Verde / Gris","Referencia","No de fábrica"],
-["Triumph","Tiger 900","Moto","Gasolina","Cadena","$70.000.000","888cc tricilíndrico","Referencia","6 velocidades","2","Negro / Blanco / Verde","Referencia","No de fábrica"],
-["Royal Enfield","Himalayan 450","Moto","Gasolina","Cadena","$35.000.000","452cc monocilíndrico","Referencia","6 velocidades","2","Verde / Negro / Blanco","Referencia","No de fábrica"],
-  ["Suzuki","Hayabusa","Moto","Gasolina","Cadena","$95.000.000","1340cc 4 cilindros","Referencia","6 velocidades","2","Negro / Blanco / Rojo","Referencia","No de fábrica"],
-["Kawasaki","Ninja ZX-6R","Moto","Gasolina","Cadena","$70.000.000","636cc 4 cilindros","Referencia","6 velocidades","2","Verde / Negro / Blanco","Referencia","No de fábrica"],
-["Kawasaki","Ninja 1000SX","Moto","Gasolina","Cadena","$82.000.000","1043cc 4 cilindros","Referencia","6 velocidades","2","Verde / Negro / Gris","Referencia","No de fábrica"],
-["Yamaha","Ténéré 700","Moto","Gasolina","Cadena","$70.000.000","689cc bicilíndrico","Referencia","6 velocidades","2","Azul / Negro / Blanco","Referencia","No de fábrica"],
-["Honda","Gold Wing","Moto","Gasolina","Cadena","$120.000.000","1833cc 6 cilindros","Referencia","7 velocidades/DCT","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Suzuki","V-Strom 800DE","Moto","Gasolina","Cadena","$60.000.000","776cc bicilíndrico","Referencia","6 velocidades","2","Amarillo / Negro / Blanco","Referencia","No de fábrica"],
-["CFMOTO","800MT","Moto","Gasolina","Cadena","$55.000.000","799cc bicilíndrico","Referencia","6 velocidades","2","Azul / Gris / Negro","Referencia","No de fábrica"],
-["Benelli","TRK 702","Moto","Gasolina","Cadena","$43.000.000","698cc bicilíndrico","Referencia","6 velocidades","2","Blanco / Negro / Verde","Referencia","No de fábrica"],
-["KTM","390 Adventure","Moto","Gasolina","Cadena","$38.000.000","399cc monocilíndrico","Referencia","6 velocidades","2","Naranja / Negro / Blanco","Referencia","No de fábrica"],
-["Yamaha","XMAX 300","Moto","Gasolina","Cadena","$32.000.000","292cc monocilíndrico","Referencia","CVT","2","Gris / Negro / Blanco","Referencia","No de fábrica"],
-["Honda","PCX 160","Moto","Gasolina","Cadena","$20.000.000","157cc monocilíndrico","Referencia","CVT","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Honda","XR190L","Moto","Gasolina","Cadena","$20.000.000","184cc monocilíndrico","Referencia","5 velocidades","2","Rojo / Negro / Blanco","Referencia","No de fábrica"],
-["Suzuki","GSX-8S","Moto","Gasolina","Cadena","$55.000.000","776cc bicilíndrico","Referencia","6 velocidades","2","Azul / Negro / Blanco","Referencia","No de fábrica"],
-["Kawasaki","Eliminator 500","Moto","Gasolina","Cadena","$43.000.000","451cc bicilíndrico","Referencia","6 velocidades","2","Negro / Gris / Rojo","Referencia","No de fábrica"]
-];
+<nav class="nav-links">
 
-const emojiFor=c=>c==="Moto"?"🏍️":c==="Camioneta"?"🛻":c==="Auto"?"🏎️":"🚙";
+<a href="#inicio">INICIO</a>
+<a href="#catalogo">CATÁLOGO</a>
+<a href="#categorias">CATEGORÍAS</a>
+<a href="#servicios">SERVICIOS</a>
+<a href="#nosotros">NOSOTROS</a>
+<a href="#contacto">CONTACTO</a>
 
-const vehicles=base.map((x,i)=>({
-id:i+1,
-brand:x[0],
-model:x[1],
-category:x[2],
-fuel:x[3],
-drive:x[4],
-price:x[5],
-engine:x[6],
-power:x[7],
-trans:x[8],
-seats:x[9],
-colors:x[10],
-priceType:x[11],
-armor:x[12],
-year:2026,
-emoji:emojiFor(x[2]),
-mileage:"0 km",
-condition:"Nuevo",
-abs:"Sí",
-traction:x[4],
-airbags:x[2]==="Moto"?"No aplica":"6+",
-sunroof:x[2]==="SUV"||x[2]==="Auto"?"Disponible según versión":"No aplica"
-}));
+</nav>
 
-let favorites=new Set(JSON.parse(localStorage.getItem("jtFav")||"[]")), compareList=[];
+<div class="nav-buttons">
 
-const brands=[...new Set(vehicles.map(v=>v.brand))].sort();
-brands.forEach(b=>brand.innerHTML+=`<option>${b}</option>`);
+<button class="icon-button" onclick="buscar()">⌕</button>
 
-count.textContent=vehicles.length;
-  function render(){
-const q=search.value.toLowerCase();
-const cat=category.value;
-const br=brand.value;
-const fu=fuel.value;
-const dr=drive.value;
+<button class="icon-button" onclick="mostrarFavoritos()">♡</button>
 
-let arr=vehicles.filter(v=>
-(!q||`${v.brand} ${v.model} ${v.engine} ${v.category}`.toLowerCase().includes(q))&&
-(!cat||v.category===cat)&&
-(!br||v.brand===br)&&
-(!fu||v.fuel===fu)&&
-(!dr||v.drive===dr)
-);
+</div>
 
-if(sort.value==="name")
-arr.sort((a,b)=>(a.brand+a.model).localeCompare(b.brand+b.model));
-
-if(sort.value==="low")
-arr.sort((a,b)=>num(a.price)-num(b.price));
-
-if(sort.value==="high")
-arr.sort((a,b)=>num(b.price)-num(a.price));
-
-resultCount.textContent=`${arr.length} resultado${arr.length!==1?"s":""}`;
-
-grid.innerHTML=arr.length
-?arr.map(card).join("")
-:`<div class="empty">No encontramos vehículos con esos filtros.</div>`;
-}
-
-function num(s){
-return Number(String(s).replace(/\D/g,""))||0;
-}
-
-function card(v){
-return `<article class="card">
-<div class="visual">
-<span class="tag">${v.category}</span>
-<button class="heart ${favorites.has(v.id)?"active":""}" onclick="fav(${v.id})">
-${favorites.has(v.id)?"♥":"♡"}
+<button class="icon-button menu-button" onclick="menuMobile()">
+☰
 </button>
-<div class="emoji">${v.emoji}</div>
+
 </div>
 
-<div class="cardbody">
-<div class="brandline">${v.brand}</div>
-<h3>${v.model}</h3>
-<div class="muted">${v.year} · ${v.condition} · ${v.mileage}</div>
-<div class="price">${v.price}</div>
+</header>
 
-<div class="chips">
-<span class="chip">${v.engine}</span>
-<span class="chip">${v.drive}</span>
-<span class="chip">${v.fuel}</span>
-<span class="chip">Blindaje: ${v.armor}</span>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-image"></div>
+
+<div class="hero-content">
+
+<div class="hero-small">
+MOTOS · CUATRIMOTOS · AUTOS · CAMIONETAS
 </div>
 
-<div class="cardactions">
-<button class="primary" onclick="details(${v.id})">Ver ficha</button>
-<button onclick="addCompare(${v.id})">Comparar</button>
+<h1>
+<span>JT</span> MOTORS
+</h1>
+
+<h2>
+VEHÍCULOS QUE REPRESENTAN TU ESTILO
+</h2>
+
+<p>
+Descubre una colección de motos, cuatrimotos, autos,
+SUV y camionetas para quienes buscan potencia,
+diseño, aventura y personalidad.
+</p>
+
+<div class="buttons">
+
+<a href="#catalogo" class="btn btn-gold">
+EXPLORAR CATÁLOGO →
+</a>
+
+<a href="#nosotros" class="btn btn-dark">
+CONOCE JT MOTORS
+</a>
+
 </div>
+
 </div>
-</article>`;
-}
 
-function fav(id){
-favorites.has(id)
-?favorites.delete(id)
-:favorites.add(id);
 
-localStorage.setItem("jtFav",JSON.stringify([...favorites]));
-render();
+<div class="hero-info">
 
-toast(
-favorites.has(id)
-?"Añadido a favoritos"
-:"Eliminado de favoritos"
-);
-}
+<div class="hero-info-box">
 
-function details(id){
-let v=vehicles.find(x=>x.id===id);
-
-modalContent.innerHTML=`
-<div class="modalgrid">
-
-<div class="bigvisual">${v.emoji}</div>
+<div class="hero-info-icon">◇</div>
 
 <div>
-<div class="brandline">${v.brand}</div>
+<strong>VEHÍCULOS SELECCIONADOS</strong>
+<small>Catálogo premium</small>
+</div>
 
-<h2 style="font-size:34px;margin:5px 0">
-${v.model}
+</div>
+
+<div class="hero-info-box">
+
+<div class="hero-info-icon">☆</div>
+
+<div>
+<strong>ASESORÍA PERSONALIZADA</strong>
+<small>Encuentra tu vehículo</small>
+</div>
+
+</div>
+
+<div class="hero-info-box">
+
+<div class="hero-info-icon">▣</div>
+
+<div>
+<strong>ENTREGA SEGURA</strong>
+<small>Proceso acompañado</small>
+</div>
+
+</div>
+
+<div class="hero-info-box">
+
+<div class="hero-info-icon">♧</div>
+
+<div>
+<strong>SOPORTE POSTVENTA</strong>
+<small>Estamos contigo</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CATALOGO
+========================= -->
+
+<section class="section" id="catalogo">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="eyebrow">
+COLECCIÓN JT MOTORS
+</div>
+
+<h2 class="section-title">
+Encuentra tu próximo vehículo.
+</h2>
+
+</div>
+
+<p class="section-description">
+Busca por marca, modelo, categoría, combustible
+o tracción.
+</p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<strong id="totalVehicles">0</strong>
+<span>VEHÍCULOS</span>
+</div>
+
+<div class="stat">
+<strong>5</strong>
+<span>CATEGORÍAS</span>
+</div>
+
+<div class="stat">
+<strong id="totalFavorites">0</strong>
+<span>FAVORITOS</span>
+</div>
+
+<div class="stat">
+<strong id="totalCompare">0</strong>
+<span>COMPARACIÓN</span>
+</div>
+
+</div>
+
+
+<div class="filters">
+
+<input
+id="search"
+class="input"
+placeholder="🔎 Buscar vehículo..."
+oninput="renderVehicles()"
+>
+
+<select id="category" class="select" onchange="renderVehicles()">
+
+<option value="">Todas las categorías</option>
+
+<option value="Moto">Motos</option>
+
+<option value="Cuatrimoto">Cuatrimotos</option>
+
+<option value="Auto">Autos</option>
+
+<option value="SUV">SUV</option>
+
+<option value="Camioneta">Camionetas</option>
+
+</select>
+
+
+<select id="brand" class="select" onchange="renderVehicles()">
+
+<option value="">Todas las marcas</option>
+
+</select>
+
+
+<select id="fuel" class="select" onchange="renderVehicles()">
+
+<option value="">Combustible</option>
+
+<option value="Gasolina">Gasolina</option>
+
+<option value="Diésel">Diésel</option>
+
+<option value="Híbrido">Híbrido</option>
+
+<option value="Eléctrico">Eléctrico</option>
+
+</select>
+
+
+<select id="drive" class="select" onchange="renderVehicles()">
+
+<option value="">Tracción</option>
+
+<option value="4x2">4x2</option>
+
+<option value="4x4">4x4</option>
+
+<option value="AWD">AWD</option>
+
+<option value="Cadena">Cadena</option>
+
+<option value="CVT">CVT</option>
+
+</select>
+
+
+<select id="sort" class="select" onchange="renderVehicles()">
+
+<option value="featured">Destacados</option>
+
+<option value="low">Precio menor</option>
+
+<option value="high">Precio mayor</option>
+
+<option value="name">Nombre A-Z</option>
+
+</select>
+
+
+<button class="btn btn-gold" onclick="clearFilters()">
+LIMPIAR
+</button>
+
+</div>
+
+
+<div class="vehicle-grid" id="vehicleGrid">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORIAS
+========================= -->
+
+<section class="section" id="categorias">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="eyebrow">
+EXPLORA
+</div>
+
+<h2 class="section-title">
+Por categoría.
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="categories">
+
+<div class="category-card" onclick="selectCategory('Moto')">
+
+<div class="category-icon">
+🏍️
+</div>
+
+<h3>Motos</h3>
+
+<p>
+Deportivas, motocross, naked y adventure.
+</p>
+
+</div>
+
+
+<div class="category-card" onclick="selectCategory('Cuatrimoto')">
+
+<div class="category-icon">
+🛞
+</div>
+
+<h3>Cuatrimotos</h3>
+
+<p>
+Vehículos para aventura y off-road.
+</p>
+
+</div>
+
+
+<div class="category-card" onclick="selectCategory('Auto')">
+
+<div class="category-icon">
+🏎️
+</div>
+
+<h3>Autos</h3>
+
+<p>
+Deportivos y vehículos de alto desempeño.
+</p>
+
+</div>
+
+
+<div class="category-card" onclick="selectCategory('Camioneta')">
+
+<div class="category-icon">
+🛻
+</div>
+
+<h3>Camionetas</h3>
+
+<p>
+Raptor, Tacoma, Tundra y más.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section class="section" id="servicios">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="eyebrow">
+JT MOTORS
+</div>
+
+<h2 class="section-title">
+Más que un catálogo.
+</h2>
+
+</div>
+
+<p class="section-description">
+Una experiencia pensada para descubrir,
+comparar y guardar vehículos.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-icon">
+✦
+</div>
+
+<h3>
+Compra informada
+</h3>
+
+<p>
+Consulta las características principales
+de cada vehículo antes de tomar una decisión.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+⚖
+</div>
+
+<h3>
+Comparación
+</h3>
+
+<p>
+Compara hasta tres vehículos al mismo tiempo
+para revisar sus características.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+♡
+</div>
+
+<h3>
+Favoritos
+</h3>
+
+<p>
+Guarda los vehículos que más te interesan
+directamente en tu navegador.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NOSOTROS
+========================= -->
+
+<section class="section" id="nosotros">
+
+<div class="container">
+
+<div class="cta">
+
+<div>
+
+<div class="eyebrow">
+JT MOTORS
+</div>
+
+<h2>
+Tu estilo. Tu vehículo.
+</h2>
+
+<p>
+Una experiencia premium para descubrir vehículos
+que combinan aventura, potencia, diseño y personalidad.
+</p>
+
+</div>
+
+<a href="#contacto" class="btn btn-gold">
+HABLEMOS →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="section" id="contacto">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="eyebrow">
+CONTACTO
+</div>
+
+<h2 class="section-title">
+¿Buscas algo específico?
+</h2>
+
+</div>
+
+<p class="section-description">
+Comunícate con JT Motors para recibir información
+sobre los vehículos disponibles.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-icon">
+◉
+</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Habla directamente con JT Motors.
+</p>
+
+<a
+class="btn btn-gold"
+href="https://wa.me/"
+target="_blank"
+>
+WHATSAPP →
+</a>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+@
+</div>
+
+<h3>
+Correo
+</h3>
+
+<p>
+Escríbenos para solicitar información.
+</p>
+
+<a
+class="btn btn-dark"
+href="mailto:contacto@jtmotors.com"
+>
+ENVIAR CORREO
+</a>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+⌖
+</div>
+
+<h3>
+Ubicación
+</h3>
+
+<p>
+Agrega aquí la ubicación real de JT Motors.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPARE BAR
+========================= -->
+
+<div class="compare-bar" id="compareBar">
+
+<span class="compare-count">
+
+<span id="compareNumber">
+0
+</span>
+
+/ 3 seleccionados
+
+</span>
+
+<button class="card-button gold" onclick="compareVehicles()">
+COMPARAR
+</button>
+
+<button class="card-button" onclick="clearCompare()">
+VACIAR
+</button>
+
+</div>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<div>
+
+<div class="eyebrow">
+JT MOTORS
+</div>
+
+<h2 id="modalTitle">
+Vehículo
+</h2>
+
+</div>
+
+<button class="modal-close" onclick="closeModal()">
+×
+</button>
+
+</div>
+
+<div class="modal-body" id="modalBody">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast">
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-content">
+
+<span>
+© 2026 JT MOTORS — PREMIUM VEHICLES
+</span>
+
+<span>
+Diseñado para amantes de los vehículos
+</span>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* ============================================================
+   VEHÍCULOS
+============================================================ */
+
+const vehicles = [
+
+/* MOTOS */
+
+{
+id:1,
+brand:"Yamaha",
+model:"YZ250F",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:3299,
+year:2026,
+engine:"250 cc",
+power:"Alta",
+transmission:"5 velocidades",
+seats:"1",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:2,
+brand:"Yamaha",
+model:"MT-07",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:8799,
+year:2026,
+engine:"689 cc",
+power:"Alta",
+transmission:"6 velocidades",
+seats:"2",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:3,
+brand:"Yamaha",
+model:"R7",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:9199,
+year:2026,
+engine:"689 cc",
+power:"Alta",
+transmission:"6 velocidades",
+seats:"2",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:4,
+brand:"Yamaha",
+model:"MT-09",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:11999,
+year:2026,
+engine:"890 cc",
+power:"Muy alta",
+transmission:"6 velocidades",
+seats:"2",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:5,
+brand:"Honda",
+model:"CRF450R",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:9699,
+year:2026,
+engine:"449 cc",
+power:"Muy alta",
+transmission:"5 velocidades",
+seats:"1",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:6,
+brand:"Kawasaki",
+model:"Ninja ZX-6R",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:11299,
+year:2026,
+engine:"636 cc",
+power:"Muy alta",
+transmission:"6 velocidades",
+seats:"2",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:7,
+brand:"BMW",
+model:"S 1000 RR",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:18500,
+year:2026,
+engine:"999 cc",
+power:"Muy alta",
+transmission:"6 velocidades",
+seats:"2",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+{
+id:8,
+brand:"Ducati",
+model:"Panigale V4",
+category:"Moto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:23995,
+year:2026,
+engine:"1103 cc",
+power:"Muy alta",
+transmission:"6 velocidades",
+seats:"2",
+condition:"Nueva",
+emoji:"🏍️"
+},
+
+/* CUATRIMOTOS */
+
+{
+id:9,
+brand:"Yamaha",
+model:"Raptor 700R",
+category:"Cuatrimoto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:10499,
+year:2026,
+engine:"686 cc",
+power:"Muy alta",
+transmission:"5 velocidades",
+seats:"1",
+condition:"Nueva",
+emoji:"🛞"
+},
+
+{
+id:10,
+brand:"Yamaha",
+model:"YFZ450R",
+category:"Cuatrimoto",
+fuel:"Gasolina",
+drive:"Cadena",
+price:9999,
+year:2026,
+engine:"449 cc",
+power:"Alta",
+transmission:"5 velocidades",
+seats:"1",
+condition:"Nueva",
+emoji:"🛞"
+},
+
+{
+id:11,
+brand:"Can-Am",
+model:"Renegade",
+category:"Cuatrimoto",
+fuel:"Gasolina",
+drive:"CVT",
+price:15499,
+year:2026,
+engine:"1000 cc",
+power:"Muy alta",
+transmission:"CVT",
+seats:"1",
+condition:"Nueva",
+emoji:"🛞"
+},
+
+{
+id:12,
+brand:"Polaris",
+model:"RZR",
+category:"Cuatrimoto",
+fuel:"Gasolina",
+drive:"CVT",
+price:21999,
+year:2026,
+engine:"999 cc",
+power:"Muy alta",
+transmission:"CVT",
+seats:"2",
+condition:"Nueva",
+emoji:"🛞"
+},
+
+/* AUTOS */
+
+{
+id:13,
+brand:"Toyota",
+model:"GR Supra",
+category:"Auto",
+fuel:"Gasolina",
+drive:"4x2",
+price:56900,
+year:2026,
+engine:"3.0 Turbo",
+power:"Muy alta",
+transmission:"8 velocidades",
+seats:"2",
+condition:"Nuevo",
+emoji:"🏎️"
+},
+
+{
+id:14,
+brand:"Ford",
+model:"Mustang GT",
+category:"Auto",
+fuel:"Gasolina",
+drive:"4x2",
+price:44999,
+year:2026,
+engine:"5.0 V8",
+power:"Muy alta",
+transmission:"10 velocidades",
+seats:"4",
+condition:"Nuevo",
+emoji:"🏎️"
+},
+
+{
+id:15,
+brand:"Chevrolet",
+model:"Corvette C8",
+category:"Auto",
+fuel:"Gasolina",
+drive:"4x2",
+price:69995,
+year:2026,
+engine:"6.2 V8",
+power:"Muy alta",
+transmission:"8 velocidades",
+seats:"2",
+condition:"Nuevo",
+emoji:"🏎️"
+},
+
+{
+id:16,
+brand:"Nissan",
+model:"GT-R",
+category:"Auto",
+fuel:"Gasolina",
+drive:"AWD",
+price:121000,
+year:2026,
+engine:"3.8 V6",
+power:"Muy alta",
+transmission:"DCT",
+seats:"4",
+condition:"Nuevo",
+emoji:"🏎️"
+},
+
+{
+id:17,
+brand:"BMW",
+model:"M4",
+category:"Auto",
+fuel:"Gasolina",
+drive:"AWD",
+price:79900,
+year:2026,
+engine:"3.0 Turbo",
+power:"Muy alta",
+transmission:"8 velocidades",
+seats:"4",
+condition:"Nuevo",
+emoji:"🏎️"
+},
+
+{
+id:18,
+brand:"Porsche",
+model:"911 Carrera",
+category:"Auto",
+fuel:"Gasolina",
+drive:"AWD",
+price:122000,
+year:2026,
+engine:"3.0 Turbo",
+power:"Muy alta",
+transmission:"8 velocidades",
+seats:"4",
+condition:"Nuevo",
+emoji:"🏎️"
+},
+
+/* CAMIONETAS */
+
+{
+id:19,
+brand:"Ford",
+model:"F-150 Raptor",
+category:"Camioneta",
+fuel:"Gasolina",
+drive:"4x4",
+price:78900,
+year:2026,
+engine:"3.5 V6",
+power:"Muy alta",
+transmission:"10 velocidades",
+seats:"5",
+condition:"Nueva",
+emoji:"🛻"
+},
+
+{
+id:20,
+brand:"Ford",
+model:"Ranger Raptor",
+category:"Camioneta",
+fuel:"Gasolina",
+drive:"4x4",
+price:57900,
+year:2026,
+engine:"3.0 V6",
+power:"Muy alta",
+transmission:"10 velocidades",
+seats:"5",
+condition:"Nueva",
+emoji:"🛻"
+},
+
+{
+id:21,
+brand:"Toyota",
+model:"Tacoma TRD Pro",
+category:"Camioneta",
+fuel:"Gasolina",
+drive:"4x4",
+price:64900,
+year:2026,
+engine:"3.5 V6",
+power:"Muy alta",
+transmission:"Automática",
+seats:"5",
+condition:"Nueva",
+emoji:"🛻"
+},
+
+{
+id:22,
+brand:"Toyota",
+model:"Tundra TRD Pro",
+category:"Camioneta",
+fuel:"Híbrido",
+drive:"4x4",
+price:72900,
+year:2026,
+engine:"3.5 V6 Hybrid",
+power:"Muy alta",
+transmission:"10 velocidades",
+seats:"5",
+condition:"Nueva",
+emoji:"🛻"
+},
+
+{
+id:23,
+brand:"Chevrolet",
+model:"Silverado ZR2",
+category:"Camioneta",
+fuel:"Gasolina",
+drive:"4x4",
+price:70900,
+year:2026,
+engine:"6.2 V8",
+power:"Muy alta",
+transmission:"10 velocidades",
+seats:"5",
+condition:"Nueva",
+emoji:"🛻"
+},
+
+{
+id:24,
+brand:"RAM",
+model:"1500 TRX",
+category:"Camioneta",
+fuel:"Gasolina",
+drive:"4x4",
+price:88900,
+year:2026,
+engine:"6.2 V8",
+power:"Muy alta",
+transmission:"8 velocidades",
+seats:"5",
+condition:"Nueva",
+emoji:"🛻"
+},
+
+/* SUV */
+
+{
+id:25,
+brand:"Toyota",
+model:"Land Cruiser",
+category:"SUV",
+fuel:"Gasolina",
+drive:"4x4",
+price:56900,
+year:2026,
+engine:"2.4 Turbo",
+power:"Alta",
+transmission:"8 velocidades",
+seats:"7",
+condition:"Nuevo",
+emoji:"🚙"
+},
+
+{
+id:26,
+brand:"Ford",
+model:"Bronco Raptor",
+category:"SUV",
+fuel:"Gasolina",
+drive:"4x4",
+price:91000,
+year:2026,
+engine:"3.0 V6",
+power:"Muy alta",
+transmission:"10 velocidades",
+seats:"5",
+condition:"Nuevo",
+emoji:"🚙"
+},
+
+{
+id:27,
+brand:"Jeep",
+model:"Wrangler Rubicon",
+category:"SUV",
+fuel:"Gasolina",
+drive:"4x4",
+price:48900,
+year:2026,
+engine:"3.6 V6",
+power:"Alta",
+transmission:"8 velocidades",
+seats:"5",
+condition:"Nuevo",
+emoji:"🚙"
+},
+
+{
+id:28,
+brand:"Mercedes-Benz",
+model:"AMG G 63",
+category:"SUV",
+fuel:"Gasolina",
+drive:"AWD",
+price:180000,
+year:2026,
+engine:"4.0 V8",
+power:"Muy alta",
+transmission:"9 velocidades",
+seats:"5",
+condition:"Nuevo",
+emoji:"🚙"
+}
+
+];
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+const grid=document.getElementById("vehicleGrid");
+
+const search=document.getElementById("search");
+
+const category=document.getElementById("category");
+
+const brand=document.getElementById("brand");
+
+const fuel=document.getElementById("fuel");
+
+const drive=document.getElementById("drive");
+
+const sort=document.getElementById("sort");
+
+const modal=document.getElementById("modal");
+
+const modalTitle=document.getElementById("modalTitle");
+
+const modalBody=document.getElementById("modalBody");
+
+const toastElement=document.getElementById("toast");
+
+let favorites=new Set(
+JSON.parse(localStorage.getItem("jtFavorites")||"[]")
+);
+
+let compareList=[];
+
+
+/* ============================================================
+   MARCAS
+============================================================ */
+
+const brands=[
+...new Set(
+vehicles.map(vehicle=>vehicle.brand)
+)
+].sort();
+
+brands.forEach(brandName=>{
+
+const option=document.createElement("option");
+
+option.value=brandName;
+
+option.textContent=brandName;
+
+brand.appendChild(option);
+
+});
+
+
+/* ============================================================
+   FORMATO PRECIO
+============================================================ */
+
+function formatPrice(price){
+
+return "$"+price.toLocaleString("en-US");
+
+}
+
+
+/* ============================================================
+   RENDER VEHICLES
+============================================================ */
+
+function renderVehicles(){
+
+const query=search.value.toLowerCase().trim();
+
+const selectedCategory=category.value;
+
+const selectedBrand=brand.value;
+
+const selectedFuel=fuel.value;
+
+const selectedDrive=drive.value;
+
+let results=vehicles.filter(vehicle=>{
+
+const text=(
+vehicle.brand+
+" "+
+vehicle.model+
+" "+
+vehicle.engine+
+" "+
+vehicle.category
+).toLowerCase();
+
+return(
+
+(!query||text.includes(query))&&
+
+(!selectedCategory||
+vehicle.category===selectedCategory)&&
+
+(!selectedBrand||
+vehicle.brand===selectedBrand)&&
+
+(!selectedFuel||
+vehicle.fuel===selectedFuel)&&
+
+(!selectedDrive||
+vehicle.drive===selectedDrive)
+
+);
+
+});
+
+
+if(sort.value==="low"){
+
+results.sort(
+(a,b)=>a.price-b.price
+);
+
+}
+
+if(sort.value==="high"){
+
+results.sort(
+(a,b)=>b.price-a.price
+);
+
+}
+
+if(sort.value==="name"){
+
+results.sort(
+(a,b)=>
+(a.brand+a.model)
+.localeCompare(
+b.brand+b.model
+)
+);
+
+}
+
+
+if(results.length===0){
+
+grid.innerHTML=`
+
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:60px;
+color:#999;
+">
+
+No encontramos vehículos
+con esos filtros.
+
+</div>
+
+`;
+
+}else{
+
+grid.innerHTML=
+results.map(createVehicleCard).join("");
+
+}
+
+
+updateCounters();
+
+}
+
+
+/* ============================================================
+   VEHICLE CARD
+============================================================ */
+
+function createVehicleCard(vehicle){
+
+const isFavorite=favorites.has(vehicle.id);
+
+const isCompared=
+compareList.includes(vehicle.id);
+
+return`
+
+<article class="vehicle-card">
+
+<div class="vehicle-image">
+
+<span class="vehicle-tag">
+${vehicle.category}
+</span>
+
+<button
+class="favorite ${isFavorite?"active":""}"
+onclick="toggleFavorite(${vehicle.id})"
+>
+${isFavorite?"♥":"♡"}
+</button>
+
+<span>
+${vehicle.emoji}
+</span>
+
+</div>
+
+
+<div class="vehicle-content">
+
+<div class="brand">
+${vehicle.brand}
+</div>
+
+<h3>
+${vehicle.model}
+</h3>
+
+<div class="vehicle-meta">
+${vehicle.year} · ${vehicle.condition}
+</div>
+
+<div class="price">
+${formatPrice(vehicle.price)}
+</div>
+
+
+<div class="chips">
+
+<span class="chip">
+${vehicle.engine}
+</span>
+
+<span class="chip">
+${vehicle.drive}
+</span>
+
+<span class="chip">
+${vehicle.fuel}
+</span>
+
+</div>
+
+
+<div class="card-buttons">
+
+<button
+class="card-button gold"
+onclick="showVehicle(${vehicle.id})"
+>
+VER FICHA
+</button>
+
+<button
+class="card-button"
+onclick="addCompare(${vehicle.id})"
+>
+${isCompared?"✓ COMPARANDO":"COMPARAR"}
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+`;
+
+}
+
+
+/* ============================================================
+   FAVORITOS
+============================================================ */
+
+function toggleFavorite(id){
+
+if(favorites.has(id)){
+
+favorites.delete(id);
+
+showToast("Eliminado de favoritos");
+
+}else{
+
+favorites.add(id);
+
+showToast("Añadido a favoritos");
+
+}
+
+localStorage.setItem(
+"jtFavorites",
+JSON.stringify([...favorites])
+);
+
+renderVehicles();
+
+}
+
+
+function mostrarFavoritos(){
+
+const favoriteVehicles=
+vehicles.filter(
+vehicle=>favorites.has(vehicle.id)
+);
+
+document.getElementById("catalogo")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+if(favoriteVehicles.length===0){
+
+grid.innerHTML=`
+
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:60px;
+color:#999;
+">
+
+Todavía no tienes
+vehículos favoritos.
+
+</div>
+
+`;
+
+return;
+
+}
+
+grid.innerHTML=
+favoriteVehicles
+.map(createVehicleCard)
+.join("");
+
+}
+
+
+/* ============================================================
+   VEHICLE DETAILS
+============================================================ */
+
+function showVehicle(id){
+
+const vehicle=
+vehicles.find(
+item=>item.id===id
+);
+
+modalTitle.textContent=
+vehicle.brand+" "+vehicle.model;
+
+
+modalBody.innerHTML=`
+
+<div style="
+font-size:85px;
+margin-bottom:15px;
+">
+
+${vehicle.emoji}
+
+</div>
+
+<div class="brand">
+${vehicle.brand}
+</div>
+
+<h2 style="
+font-size:35px;
+margin:7px 0;
+">
+
+${vehicle.model}
+
 </h2>
 
 <div class="price">
-${v.price}
-<small class="muted">precio de referencia</small>
+${formatPrice(vehicle.price)}
 </div>
 
-<p class="muted">
-Ficha de referencia para catálogo.
-Confirma año, versión, país y equipamiento antes de publicar una oferta.
+<p style="
+color:#999;
+line-height:1.7;
+margin:15px 0 25px;
+">
+
+Ficha técnica de referencia.
+Verifica disponibilidad, versión,
+año y precio final antes de publicar
+una oferta comercial.
+
 </p>
 
-<div class="specs">
-${spec("Año",v.year)}
-${spec("Motor",v.engine)}
-${spec("Potencia",v.power)}
-${spec("Transmisión",v.trans)}
-${spec("Combustible",v.fuel)}
-${spec("Tracción",v.drive)}
-${spec("Pasajeros",v.seats)}
-${spec("Colores",v.colors)}
-${spec("Blindaje",v.armor)}
-${spec("ABS",v.abs)}
-${spec("Airbags",v.airbags)}
-${spec("Techo",v.sunroof)}
-${spec("Estado",v.condition)}
-${spec("Kilometraje",v.mileage)}
-</div>
+
+<div class="spec-grid">
+
+${specification(
+"Categoría",
+vehicle.category
+)}
+
+${specification(
+"Año",
+vehicle.year
+)}
+
+${specification(
+"Motor",
+vehicle.engine
+)}
+
+${specification(
+"Potencia",
+vehicle.power
+)}
+
+${specification(
+"Transmisión",
+vehicle.transmission
+)}
+
+${specification(
+"Combustible",
+vehicle.fuel
+)}
+
+${specification(
+"Tracción",
+vehicle.drive
+)}
+
+${specification(
+"Pasajeros",
+vehicle.seats
+)}
+
+${specification(
+"Estado",
+vehicle.condition
+)}
 
 </div>
-</div>`;
 
-modal.classList.add("open");
+
+<div class="buttons">
+
+<a
+href="#contacto"
+class="btn btn-gold"
+onclick="closeModal()"
+>
+
+SOLICITAR INFORMACIÓN →
+
+</a>
+
+</div>
+
+`;
+
+modal.classList.add("active");
+
 }
 
-function spec(a,b){
-return `<div class="spec">
-<span>${a}</span>
-<b>${b}</b>
-</div>`;
+
+function specification(name,value){
+
+return`
+
+<div class="spec">
+
+<span>
+${name}
+</span>
+
+<strong>
+${value}
+</strong>
+
+</div>
+
+`;
+
 }
 
-function closeModal(){
-modal.classList.remove("open");
+
+/* ============================================================
+   COMPARADOR
+============================================================ */
+
+function addCompare(id){
+
+if(compareList.includes(id)){
+
+showToast(
+"Este vehículo ya está seleccionado."
+);
+
+return;
+
 }
 
-modal.addEventListener("click",e=>{
-if(e.target===modal)closeModal();
-});
-  function addCompare(id){
-if(compareList.includes(id))
-return toast("Ya está en comparación");
+if(compareList.length>=3){
 
-if(compareList.length>=3)
-return toast("Máximo 3 vehículos");
+showToast(
+"Solo puedes comparar 3 vehículos."
+);
+
+return;
+
+}
 
 compareList.push(id);
 
-compareBar.classList.add("show");
+renderVehicles();
 
-compareText.textContent=
-`${compareList.length}/3 seleccionados`;
-
-toast("Vehículo añadido");
-}
-
-function clearCompare(){
-compareList=[];
-compareBar.classList.remove("show");
-}
-
-function compare(){
-if(compareList.length<2)
-return toast("Selecciona al menos 2 vehículos");
-
-let vs=compareList.map(id=>
-vehicles.find(v=>v.id===id)
+showToast(
+"Vehículo añadido a comparación."
 );
 
-modalContent.innerHTML=`
-<h2>Comparación JT</h2>
+}
+
+
+function compareVehicles(){
+
+if(compareList.length<2){
+
+showToast(
+"Selecciona al menos 2 vehículos."
+);
+
+return;
+
+}
+
+const selected=
+compareList.map(
+id=>vehicles.find(
+vehicle=>vehicle.id===id
+)
+);
+
+modalTitle.textContent=
+"Comparación JT Motors";
+
+
+const rows=[
+
+["Precio","price"],
+
+["Año","year"],
+
+["Motor","engine"],
+
+["Potencia","power"],
+
+["Transmisión","transmission"],
+
+["Combustible","fuel"],
+
+["Tracción","drive"],
+
+["Pasajeros","seats"],
+
+["Estado","condition"]
+
+];
+
+
+modalBody.innerHTML=`
 
 <div style="overflow:auto">
 
-<table style="width:100%;border-collapse:collapse">
+<table class="compare-table">
+
+<thead>
 
 <tr>
-<th></th>
 
-${vs.map(v=>
-`<th style="padding:12px">
-${v.brand}<br>${v.model}
-</th>`
-).join("")}
+<th>
+Característica
+</th>
+
+${selected.map(vehicle=>`
+
+<th>
+${vehicle.brand}<br>
+${vehicle.model}
+</th>
+
+`).join("")}
 
 </tr>
 
-${[
-"price",
-"year",
-"engine",
-"power",
-"trans",
-"fuel",
-"drive",
-"seats",
-"colors",
-"armor",
-"condition"
-].map(k=>
-`
+</thead>
+
+<tbody>
+
+${rows.map(row=>`
+
 <tr>
-<td style="padding:10px;border-top:1px solid var(--line)">
-<b>${label(k)}</b>
+
+<td>
+<strong>
+${row[0]}
+</strong>
 </td>
 
-${vs.map(v=>
-`<td style="padding:10px;border-top:1px solid var(--line)">
-${v[k]}
-</td>`
-).join("")}
+${selected.map(vehicle=>`
+
+<td>
+
+${
+row[1]==="price"
+?formatPrice(vehicle[row[1]])
+:vehicle[row[1]]
+}
+
+</td>
+
+`).join("")}
 
 </tr>
-`
-).join("")}
+
+`).join("")}
+
+</tbody>
 
 </table>
+
 </div>
+
 `;
 
-modal.classList.add("open");
+modal.classList.add("active");
+
 }
 
-function label(k){
-return ({
-price:"Precio",
-year:"Año",
-engine:"Motor",
-power:"Potencia",
-trans:"Transmisión",
-fuel:"Combustible",
-drive:"Tracción",
-seats:"Pasajeros",
-colors:"Colores",
-armor:"Blindaje",
-condition:"Estado"
-})[k]||k;
+
+function clearCompare(){
+
+compareList=[];
+
+renderVehicles();
+
 }
 
-function resetFilters(){
+
+/* ============================================================
+   MODAL
+============================================================ */
+
+function closeModal(){
+
+modal.classList.remove("active");
+
+}
+
+modal.addEventListener(
+"click",
+event=>{
+
+if(event.target===modal){
+
+closeModal();
+
+}
+
+}
+);
+
+
+/* ============================================================
+   FILTROS
+============================================================ */
+
+function clearFilters(){
+
 search.value="";
+
 category.value="";
+
 brand.value="";
+
 fuel.value="";
+
 drive.value="";
+
 sort.value="featured";
-render();
+
+renderVehicles();
+
 }
 
-function showFavorites(){
 
-let favs=vehicles.filter(v=>
-favorites.has(v.id)
+function selectCategory(value){
+
+category.value=value;
+
+renderVehicles();
+
+document
+.getElementById("catalogo")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* ============================================================
+   BUSCAR
+============================================================ */
+
+function buscar(){
+
+document
+.getElementById("catalogo")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+setTimeout(
+()=>{
+search.focus();
+},
+500
 );
 
-grid.innerHTML=favs.length
-?favs.map(card).join("")
-:`<div class="empty">Todavía no tienes favoritos.</div>`;
-
-resultCount.textContent=
-`${favs.length} favoritos`;
-
-document.querySelector("#catalogo")
-.scrollIntoView();
 }
 
-function toast(t){
 
-toastEl.textContent=t;
+/* ============================================================
+   MOBILE MENU
+============================================================ */
 
-toastEl.classList.add("show");
+function menuMobile(){
 
-clearTimeout(window.tt);
+const nav=document.querySelector(".nav-links");
 
-window.tt=setTimeout(
-()=>toastEl.classList.remove("show"),
-1800
+if(nav.style.display==="flex"){
+
+nav.style.display="";
+
+}else{
+
+nav.style.display="flex";
+
+nav.style.position="absolute";
+
+nav.style.top="80px";
+
+nav.style.left="13px";
+
+nav.style.right="13px";
+
+nav.style.padding="20px";
+
+nav.style.background="#111";
+
+nav.style.border="1px solid #2b2925";
+
+nav.style.borderRadius="15px";
+
+nav.style.flexDirection="column";
+
+}
+
+}
+
+
+/* ============================================================
+   TOAST
+============================================================ */
+
+function showToast(message){
+
+toastElement.textContent=message;
+
+toastElement.classList.add("show");
+
+clearTimeout(window.toastTimer);
+
+window.toastTimer=setTimeout(
+()=>{
+toastElement.classList.remove("show");
+},
+2000
 );
+
 }
 
-const toastEl=document.getElementById("toast");
 
-render();
+/* ============================================================
+   COUNTERS
+============================================================ */
+
+function updateCounters(){
+
+document.getElementById(
+"totalVehicles"
+).textContent=
+vehicles.length;
+
+document.getElementById(
+"totalFavorites"
+).textContent=
+favorites.size;
+
+document.getElementById(
+"totalCompare"
+).textContent=
+compareList.length;
+
+document.getElementById(
+"compareNumber"
+).textContent=
+compareList.length;
+
+document
+.getElementById("compareBar")
+.classList.toggle(
+"active",
+compareList.length>0
+);
+
+}
+
+
+/* ============================================================
+   HEADER SCROLL
+============================================================ */
+
+window.addEventListener(
+"scroll",
+()=>{
+
+document
+.getElementById("header")
+.classList.toggle(
+"scrolled",
+window.scrollY>30
+);
+
+}
+);
+
+
+/* ============================================================
+   INICIAR PAGINA
+============================================================ */
+
+renderVehicles();
 
 </script>
 

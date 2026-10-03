@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
 <title>JT MOTORS</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -20,31 +18,18 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#0b0b0b;
     color:#fff;
+    overflow-x:hidden;
 }
 
-section{
-    padding:80px 20px;
+img{
+    max-width:100%;
+    display:block;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    color:#d4af37;
-    font-size:38px;
-    margin-bottom:45px;
-}
-
-
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header{
     position:fixed;
@@ -52,50 +37,44 @@ header{
     left:0;
     width:100%;
     z-index:1000;
-
-    background:rgba(0,0,0,.92);
-    border-bottom:1px solid #d4af37;
-
+    background:rgba(0,0,0,.75);
     backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(212,175,55,.5);
 }
 
 .navbar{
-    max-width:1200px;
+    width:100%;
+    max-width:1300px;
+    min-height:75px;
     margin:auto;
-
-    min-height:70px;
-    padding:12px 25px;
-
+    padding:12px 30px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:20px;
+    gap:25px;
 }
 
 .logo{
     color:#d4af37;
-
     font-size:28px;
     font-weight:900;
-
     letter-spacing:2px;
+    white-space:nowrap;
 }
 
 nav{
     display:flex;
-    gap:22px;
-
-    flex-wrap:wrap;
+    align-items:center;
     justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
 }
 
 nav a{
-    color:white;
+    color:#fff;
     text-decoration:none;
-
     font-weight:bold;
-
+    font-size:15px;
     transition:.3s;
 }
 
@@ -103,15 +82,12 @@ nav a:hover{
     color:#d4af37;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* ================= PORTADA ================= */
 
 .hero{
-    min-height:100vh;
-
-    padding:120px 20px 70px;
+    min-height:100svh;
+    height:100svh;
+    position:relative;
 
     display:flex;
     align-items:center;
@@ -119,93 +95,88 @@ nav a:hover{
 
     text-align:center;
 
-    background:
+    padding:110px 20px 40px;
+
+    background-image:
         linear-gradient(
-            rgba(0,0,0,.40),
-            rgba(0,0,0,.60)
+            rgba(0,0,0,.28),
+            rgba(0,0,0,.55)
         ),
-        url("assets/hero-jt-motors.png");
+        url("portada-jt-motors.png");
 
     background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+    background-position:center center;
+    background-repeat:no-repeat;
 }
 
 .hero-content{
     width:100%;
     max-width:900px;
-
     padding:30px;
-
-    animation:heroEntrada 1.2s ease forwards;
+    position:relative;
+    z-index:2;
 }
 
 .hero h1{
     color:#d4af37;
-
-    font-size:clamp(42px,8vw,90px);
-
+    font-size:clamp(45px,8vw,95px);
     font-weight:900;
-
-    text-shadow:0 3px 10px #000;
-
-    margin-bottom:15px;
+    letter-spacing:4px;
+    text-shadow:0 4px 15px #000;
+    margin-bottom:10px;
 }
 
 .hero h2{
     font-size:clamp(22px,4vw,42px);
-
     margin-bottom:20px;
-
-    text-shadow:0 2px 8px #000;
+    text-shadow:0 3px 10px #000;
 }
 
 .hero p{
     max-width:700px;
-
     margin:auto;
-
-    font-size:clamp(16px,2vw,21px);
-
+    font-size:clamp(15px,2vw,21px);
     line-height:1.6;
-
-    text-shadow:0 2px 6px #000;
+    text-shadow:0 2px 8px #000;
 }
-
-
-/* =========================
-   BOTÓN
-========================= */
 
 .btn{
     display:inline-block;
-
     margin-top:28px;
-
-    padding:14px 25px;
-
+    padding:15px 28px;
     background:#d4af37;
     color:#000;
-
     text-decoration:none;
-
     font-weight:900;
-
     border-radius:6px;
-
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-5px) scale(1.03);
-
+    transform:translateY(-3px);
     background:#fff;
 }
 
+/* ================= SECCIONES ================= */
 
-/* =========================
-   CATEGORÍAS
-========================= */
+section{
+    padding:85px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:clamp(28px,5vw,40px);
+    margin-bottom:45px;
+}
+
+/* ================= CARACTERISTICAS ================= */
 
 .features{
     background:#111;
@@ -213,142 +184,81 @@ nav a:hover{
 
 .feature-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .feature{
     text-align:center;
-
-    padding:25px;
-
+    padding:30px 20px;
     border:1px solid #333;
-
     border-radius:10px;
-
     background:#171717;
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+    transition:.3s;
 }
 
 .feature:hover{
-    transform:
-        translateY(-10px)
-        scale(1.02);
-
+    transform:translateY(-5px);
     border-color:#d4af37;
-
-    box-shadow:
-        0 15px 35px rgba(212,175,55,.18);
 }
 
 .feature h3{
     color:#d4af37;
-
     margin-bottom:10px;
 }
 
-
-/* =========================
-   CATÁLOGO
-========================= */
-
-#catalogo{
-    background:#0b0b0b;
-}
+/* ================= FILTROS ================= */
 
 .filters{
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:12px;
-
     margin-bottom:35px;
 }
 
 .filter{
     border:1px solid #d4af37;
-
     background:#111;
-
     color:#fff;
-
     padding:11px 20px;
-
     border-radius:5px;
-
     cursor:pointer;
-
     font-weight:bold;
-
     transition:.3s;
 }
 
 .filter:hover,
 .filter.active{
     background:#d4af37;
-
     color:#000;
 }
 
+/* ================= CATALOGO ================= */
+
 .vehicle-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:25px;
 }
 
 .vehicle{
     background:#151515;
-
     border:1px solid #333;
-
     border-radius:10px;
-
     overflow:hidden;
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+    transition:.3s;
 }
 
 .vehicle:hover{
-    transform:
-        translateY(-10px)
-        scale(1.02);
-
+    transform:translateY(-5px);
     border-color:#d4af37;
-
-    box-shadow:
-        0 15px 35px rgba(212,175,55,.18);
 }
 
 .vehicle img{
     width:100%;
-
     height:230px;
-
     object-fit:cover;
-
-    display:block;
-
-    transition:transform .5s ease;
-}
-
-.vehicle:hover img{
-    transform:scale(1.07);
 }
 
 .vehicle-info{
@@ -357,40 +267,27 @@ nav a:hover{
 
 .vehicle-info h3{
     color:#d4af37;
-
     font-size:22px;
-
     margin-bottom:10px;
 }
 
 .vehicle-info p{
     color:#ddd;
-
     line-height:1.5;
-
     margin-bottom:15px;
 }
 
 .vehicle-info span{
     display:inline-block;
-
     color:#000;
-
     background:#d4af37;
-
     padding:6px 10px;
-
     border-radius:4px;
-
     font-size:12px;
-
     font-weight:bold;
 }
 
-
-/* =========================
-   SERVICIOS
-========================= */
+/* ================= SERVICIOS ================= */
 
 .services-section{
     background:#111;
@@ -398,65 +295,41 @@ nav a:hover{
 
 .service-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
 .service-card{
     background:#181818;
-
     border:1px solid #333;
-
     border-radius:10px;
-
     padding:30px 20px;
-
     text-align:center;
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+    transition:.3s;
 }
 
 .service-card:hover{
-    transform:
-        translateY(-10px)
-        scale(1.02);
-
+    transform:translateY(-5px);
     border-color:#d4af37;
-
-    box-shadow:
-        0 15px 35px rgba(212,175,55,.18);
 }
 
 .service-icon{
     font-size:42px;
-
     margin-bottom:15px;
 }
 
 .service-card h3{
     color:#d4af37;
-
     font-size:21px;
-
     margin-bottom:12px;
 }
 
 .service-card p{
     color:#ddd;
-
     line-height:1.6;
 }
 
-
-/* =========================
-   NOSOTROS
-========================= */
+/* ================= NOSOTROS ================= */
 
 .about-section{
     background:#0b0b0b;
@@ -476,41 +349,27 @@ nav a:hover{
 
 .about-text p{
     color:#ddd;
-
     font-size:18px;
-
     line-height:1.7;
-
     margin-bottom:18px;
 }
 
 .about-points{
     margin-top:30px;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
 .about-points div{
     background:#171717;
-
     border:1px solid #333;
-
     border-radius:7px;
-
     padding:15px;
-
     color:#fff;
 }
 
-
-/* =========================
-   CONTACTO
-========================= */
+/* ================= CONTACTO ================= */
 
 .contact-section{
     background:#111;
@@ -518,47 +377,32 @@ nav a:hover{
 
 .contact-box{
     max-width:750px;
-
     margin:auto;
-
     background:#181818;
-
     border:1px solid #333;
-
     border-radius:12px;
-
     padding:35px;
-
     text-align:center;
 }
 
 .contact-info h3{
     color:#d4af37;
-
     font-size:27px;
-
     margin-bottom:15px;
 }
 
 .contact-info > p{
     color:#ddd;
-
     line-height:1.6;
-
     margin-bottom:25px;
 }
 
 .contact-item{
     display:flex;
-
     justify-content:center;
-
     gap:8px;
-
     flex-wrap:wrap;
-
     margin:12px 0;
-
     color:#fff;
 }
 
@@ -568,90 +412,60 @@ nav a:hover{
 
 .whatsapp-btn{
     display:inline-block;
-
     margin-top:20px;
-
     padding:14px 24px;
-
     background:#d4af37;
-
     color:#000;
-
     text-decoration:none;
-
     border-radius:6px;
-
     font-weight:900;
-
     transition:.3s;
 }
 
 .whatsapp-btn:hover{
     background:#fff;
-
-    transform:
-        translateY(-5px)
-        scale(1.03);
+    transform:translateY(-3px);
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
     background:#050505;
-
     border-top:1px solid #d4af37;
-
     padding:40px 20px 25px;
-
     text-align:center;
 }
 
 .footer-content{
     max-width:1000px;
-
     margin:auto;
 }
 
 .footer-logo{
     color:#d4af37;
-
     font-size:30px;
-
     font-weight:900;
-
     letter-spacing:2px;
-
     margin-bottom:10px;
 }
 
 .footer-content p{
     color:#aaa;
-
     margin-bottom:20px;
 }
 
 .footer-links{
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-wrap:wrap;
-
     gap:20px;
-
     margin-bottom:25px;
 }
 
 .footer-links a{
     color:#fff;
-
     text-decoration:none;
-
     transition:.3s;
 }
 
@@ -661,144 +475,107 @@ footer{
 
 .copyright{
     font-size:13px;
-
-    margin-bottom:0 !important;
+    margin-bottom:0!important;
 }
 
+/* ================= TABLET ================= */
 
-/* =========================
-   ANIMACIONES
-========================= */
-
-.animar{
-    opacity:0;
-
-    transform:translateY(50px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.animar.visible{
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-@keyframes heroEntrada{
-
-    from{
-        opacity:0;
-
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-
-        transform:translateY(0);
-    }
-
-}
-
-
-/* RETRASOS */
-
-.vehicle:nth-child(1),
-.service-card:nth-child(1),
-.feature:nth-child(1){
-    transition-delay:.05s;
-}
-
-.vehicle:nth-child(2),
-.service-card:nth-child(2),
-.feature:nth-child(2){
-    transition-delay:.15s;
-}
-
-.vehicle:nth-child(3),
-.service-card:nth-child(3),
-.feature:nth-child(3){
-    transition-delay:.25s;
-}
-
-.vehicle:nth-child(4),
-.service-card:nth-child(4){
-    transition-delay:.35s;
-}
-
-.vehicle:nth-child(5){
-    transition-delay:.45s;
-}
-
-.vehicle:nth-child(6){
-    transition-delay:.55s;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:900px){
-
-    .vehicle-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .service-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:700px){
+@media(max-width:1000px){
 
     .navbar{
-        flex-direction:column;
-
-        padding:12px 15px;
+        padding:12px 20px;
     }
 
     nav{
-        gap:12px;
+        gap:16px;
+    }
 
-        font-size:14px;
+    .vehicle-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* ================= MOVIL ================= */
+
+@media(max-width:700px){
+
+    header{
+        position:absolute;
+        background:linear-gradient(
+            to bottom,
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.05)
+        );
+        border-bottom:0;
+    }
+
+    .navbar{
+        flex-direction:column;
+        padding:14px 12px;
+        gap:10px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    nav{
+        width:100%;
+        gap:9px 14px;
+    }
+
+    nav a{
+        font-size:12px;
     }
 
     .hero{
-        padding-top:150px;
+        min-height:100svh;
+        height:auto;
+        padding:145px 12px 35px;
 
-        background-position:center;
+        background-position:center center;
+        background-size:cover;
 
-        background-attachment:scroll;
+        align-items:flex-end;
     }
 
     .hero-content{
-        padding:15px;
+        padding:15px 8px;
+    }
+
+    .hero h1{
+        font-size:clamp(38px,12vw,58px);
+        letter-spacing:2px;
+    }
+
+    .hero h2{
+        font-size:clamp(19px,5.5vw,28px);
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .btn{
+        padding:12px 20px;
+        font-size:14px;
+    }
+
+    section{
+        padding:60px 15px;
     }
 
     .feature-grid{
         grid-template-columns:1fr;
     }
 
-}
-
-@media(max-width:600px){
-
-    section{
-        padding:60px 15px;
-    }
-
     .vehicle-grid{
         grid-template-columns:1fr;
-    }
-
-    .vehicle img{
-        height:220px;
     }
 
     .service-grid{
@@ -809,14 +586,6 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .filters{
-        gap:8px;
-    }
-
-    .filter{
-        padding:9px 14px;
-    }
-
     .contact-box{
         padding:25px 18px;
     }
@@ -825,875 +594,695 @@ footer{
         font-size:23px;
     }
 
-    footer{
-        padding:35px 15px 20px;
-    }
-
     .footer-links{
         gap:12px;
-
         font-size:14px;
     }
-
 }
 
-</style>
+/* ================= CELULARES PEQUEÑOS ================= */
 
+@media(max-width:420px){
+
+    nav{
+        gap:7px 10px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
+
+    .hero{
+        padding-top:145px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .vehicle img{
+        height:220px;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- ================= MENU ================= -->
+
 <header>
+    <div class="navbar">
 
-<div class="navbar">
+        <div class="logo">
+            JT MOTORS
+        </div>
 
-    <div class="logo">
-        JT MOTORS
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
     </div>
-
-    <nav>
-
-        <a href="#inicio">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-
-    </nav>
-
-</div>
-
 </header>
-
 
 <main>
 
+<!-- ================= PORTADA ================= -->
 
-<!-- =========================
-     PORTADA
-========================= -->
+<section class="hero" id="inicio">
 
-<section
-    class="hero"
-    id="inicio"
->
+    <div class="hero-content">
 
-<div class="hero-content">
+        <h1>JT MOTORS</h1>
 
-    <h1>
-        JT MOTORS
-    </h1>
-
-    <h2>
-        Potencia, estilo y libertad
-    </h2>
-
-    <p>
-        Encuentra motos, autos y camionetas
-        diseñados para quienes buscan
-        rendimiento, seguridad y estilo.
-    </p>
-
-    <a
-        href="#catalogo"
-        class="btn"
-    >
-        VER CATÁLOGO
-    </a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CATEGORÍAS
-========================= -->
-
-<section class="features">
-
-<div class="container">
-
-<div class="feature-grid">
-
-    <div class="feature animar">
-
-        <h3>
-            🏍️ MOTOS
-        </h3>
-
-        <p>
-            Modelos deportivos,
-            urbanos y de aventura.
-        </p>
-
-    </div>
-
-
-    <div class="feature animar">
-
-        <h3>
-            🚗 AUTOS
-        </h3>
-
-        <p>
-            Vehículos modernos
-            con gran rendimiento.
-        </p>
-
-    </div>
-
-
-    <div class="feature animar">
-
-        <h3>
-            🚙 CAMIONETAS
-        </h3>
-
-        <p>
-            Potencia y comodidad
-            para cualquier camino.
-        </p>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CATÁLOGO
-========================= -->
-
-<section id="catalogo">
-
-<div class="container">
-
-<h2 class="section-title">
-    NUESTRO CATÁLOGO
-</h2>
-
-<div class="filters">
-
-    <button
-        class="filter active"
-        data-filter="todos"
-    >
-        Todos
-    </button>
-
-    <button
-        class="filter"
-        data-filter="motos"
-    >
-        Motos
-    </button>
-
-    <button
-        class="filter"
-        data-filter="autos"
-    >
-        Autos
-    </button>
-
-    <button
-        class="filter"
-        data-filter="camionetas"
-    >
-        Camionetas
-    </button>
-
-</div>
-
-<div class="vehicle-grid">
-
-
-<!-- MOTO 1 -->
-
-<div
-    class="vehicle animar"
-    data-category="motos"
->
-
-<img
-src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80"
-alt="Yamaha YZ"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Yamaha YZ
-</h3>
-
-<p>
-    Potencia y rendimiento
-    para los amantes de la aventura.
-</p>
-
-<span>
-    MOTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- MOTO 2 -->
-
-<div
-    class="vehicle animar"
-    data-category="motos"
->
-
-<img
-src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80"
-alt="Ducati Panigale"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Ducati Panigale
-</h3>
-
-<p>
-    Diseño deportivo y tecnología
-    de alto rendimiento.
-</p>
-
-<span>
-    MOTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- MOTO 3 -->
-
-<div
-    class="vehicle animar"
-    data-category="motos"
->
-
-<img
-src="https://images.unsplash.com/photo-1558980394-0c7e2c7e3a6b?auto=format&fit=crop&w=900&q=80"
-alt="BMW GS"
->
-
-<div class="vehicle-info">
-
-<h3>
-    BMW GS
-</h3>
-
-<p>
-    Una moto preparada
-    para recorrer cualquier camino.
-</p>
-
-<span>
-    MOTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- MOTO 4 -->
-
-<div
-    class="vehicle animar"
-    data-category="motos"
->
-
-<img
-src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=80"
-alt="Kawasaki Ninja"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Kawasaki Ninja
-</h3>
-
-<p>
-    Estilo deportivo,
-    velocidad y tecnología.
-</p>
-
-<span>
-    MOTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- MOTO 5 -->
-
-<div
-    class="vehicle animar"
-    data-category="motos"
->
-
-<img
-src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?auto=format&fit=crop&w=900&q=80"
-alt="Honda CRF"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Honda CRF
-</h3>
-
-<p>
-    Diseñada para disfrutar
-    la conducción fuera del asfalto.
-</p>
-
-<span>
-    MOTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- MOTO 6 -->
-
-<div
-    class="vehicle animar"
-    data-category="motos"
->
-
-<img
-src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80"
-alt="Yamaha MT"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Yamaha MT
-</h3>
-
-<p>
-    Una combinación de diseño,
-    fuerza y agilidad.
-</p>
-
-<span>
-    MOTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- AUTO 1 -->
-
-<div
-    class="vehicle animar"
-    data-category="autos"
->
-
-<img
-src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=900&q=80"
-alt="Toyota GR Supra"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Toyota GR Supra
-</h3>
-
-<p>
-    Diseño deportivo y una experiencia
-    de conducción emocionante.
-</p>
-
-<span>
-    AUTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- AUTO 2 -->
-
-<div
-    class="vehicle animar"
-    data-category="autos"
->
-
-<img
-src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
-alt="Porsche 911"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Porsche 911
-</h3>
-
-<p>
-    Elegancia, tecnología
-    y carácter deportivo.
-</p>
-
-<span>
-    AUTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- AUTO 3 -->
-
-<div
-    class="vehicle animar"
-    data-category="autos"
->
-
-<img
-src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80"
-alt="Mercedes AMG"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Mercedes-AMG
-</h3>
-
-<p>
-    Lujo y rendimiento
-    en un mismo vehículo.
-</p>
-
-<span>
-    AUTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- AUTO 4 -->
-
-<div
-    class="vehicle animar"
-    data-category="autos"
->
-
-<img
-src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80"
-alt="BMW M4"
->
-
-<div class="vehicle-info">
-
-<h3>
-    BMW M4
-</h3>
-
-<p>
-    Potencia, precisión
-    y diseño moderno.
-</p>
-
-<span>
-    AUTOS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- CAMIONETA 1 -->
-
-<div
-    class="vehicle animar"
-    data-category="camionetas"
->
-
-<img
-src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80"
-alt="Ford Raptor"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Ford Raptor
-</h3>
-
-<p>
-    Fuerza y capacidad
-    para diferentes terrenos.
-</p>
-
-<span>
-    CAMIONETAS
-</span>
-
-</div>
-
-</div>
-
-
-<!-- CAMIONETA 2 -->
-
-<div
-    class="vehicle animar"
-    data-category="camionetas"
->
-
-<img
-src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80"
-alt="Range Rover Sport"
->
-
-<div class="vehicle-info">
-
-<h3>
-    Range Rover Sport
-</h3>
-
-<p>
-    Comodidad, elegancia
-    y capacidad todoterreno.
-</p>
-
-<span>
-    CAMIONETAS
-</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-<!-- =========================
-     SERVICIOS
-========================= -->
-
-<section
-    id="servicios"
-    class="services-section"
->
-
-<div class="container">
-
-    <h2 class="section-title">
-        NUESTROS SERVICIOS
-    </h2>
-
-
-    <div class="service-grid">
-
-
-        <div class="service-card animar">
-
-            <div class="service-icon">
-                🔧
-            </div>
-
-            <h3>
-                Mantenimiento
-            </h3>
-
-            <p>
-                Revisiones y mantenimiento
-                para mantener tu vehículo
-                en excelentes condiciones.
-            </p>
-
-        </div>
-
-
-        <div class="service-card animar">
-
-            <div class="service-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Repuestos
-            </h3>
-
-            <p>
-                Encuentra repuestos y accesorios
-                para diferentes modelos.
-            </p>
-
-        </div>
-
-
-        <div class="service-card animar">
-
-            <div class="service-icon">
-                🏍️
-            </div>
-
-            <h3>
-                Asesoría
-            </h3>
-
-            <p>
-                Te ayudamos a encontrar el vehículo
-                que mejor se adapte a tus necesidades.
-            </p>
-
-        </div>
-
-
-        <div class="service-card animar">
-
-            <div class="service-icon">
-                🚗
-            </div>
-
-            <h3>
-                Compra y venta
-            </h3>
-
-            <p>
-                Conoce nuestras opciones disponibles
-                para comprar o vender vehículos.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     NOSOTROS
-========================= -->
-
-<section
-    id="nosotros"
-    class="about-section"
->
-
-<div class="container about-content">
-
-    <div class="about-text animar">
-
-        <h2 class="section-title">
-            SOBRE JT MOTORS
+        <h2>
+            Potencia, estilo y libertad
         </h2>
 
         <p>
-            En JT MOTORS nos apasiona el mundo
-            de los vehículos. Nuestro objetivo es
-            ofrecer diferentes opciones de motos,
-            autos y camionetas para nuestros clientes.
+            Encuentra motos, autos y camionetas diseñados
+            para quienes buscan rendimiento, seguridad y estilo.
         </p>
 
-        <p>
-            Trabajamos para brindar una atención cercana,
-            información clara y una experiencia sencilla
-            al momento de elegir un vehículo.
-        </p>
+        <a href="#catalogo" class="btn">
+            VER CATÁLOGO
+        </a>
+
+    </div>
+
+</section>
 
 
-        <div class="about-points">
+<!-- ================= CARACTERISTICAS ================= -->
 
-            <div>
-                ✓ Atención personalizada
+<section class="features">
+
+    <div class="container">
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <h3>🏍️ MOTOS</h3>
+                <p>
+                    Modelos deportivos, urbanos y de aventura.
+                </p>
             </div>
 
-            <div>
-                ✓ Variedad de vehículos
+            <div class="feature">
+                <h3>🚗 AUTOS</h3>
+                <p>
+                    Vehículos modernos con gran rendimiento.
+                </p>
             </div>
 
-            <div>
-                ✓ Información clara
-            </div>
-
-            <div>
-                ✓ Servicio confiable
+            <div class="feature">
+                <h3>🚙 CAMIONETAS</h3>
+                <p>
+                    Potencia y comodidad para cualquier camino.
+                </p>
             </div>
 
         </div>
 
     </div>
 
-</div>
+</section>
+
+
+<!-- ================= CATALOGO ================= -->
+
+<section id="catalogo">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            NUESTRO CATÁLOGO
+        </h2>
+
+        <div class="filters">
+
+            <button class="filter active" data-filter="todos">
+                Todos
+            </button>
+
+            <button class="filter" data-filter="motos">
+                Motos
+            </button>
+
+            <button class="filter" data-filter="autos">
+                Autos
+            </button>
+
+            <button class="filter" data-filter="camionetas">
+                Camionetas
+            </button>
+
+        </div>
+
+        <div class="vehicle-grid">
+
+            <!-- MOTO 1 -->
+            <div class="vehicle" data-category="motos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80"
+                    alt="Yamaha YZ"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Yamaha YZ</h3>
+
+                    <p>
+                        Potencia y rendimiento para los amantes
+                        de la aventura.
+                    </p>
+
+                    <span>MOTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTO 2 -->
+            <div class="vehicle" data-category="motos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80"
+                    alt="Ducati Panigale"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Ducati Panigale</h3>
+
+                    <p>
+                        Diseño deportivo y tecnología de alto rendimiento.
+                    </p>
+
+                    <span>MOTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTO 3 -->
+            <div class="vehicle" data-category="motos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558980394-0c7e2c7e3a6b?auto=format&fit=crop&w=900&q=80"
+                    alt="BMW GS"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>BMW GS</h3>
+
+                    <p>
+                        Una moto preparada para recorrer cualquier camino.
+                    </p>
+
+                    <span>MOTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTO 4 -->
+            <div class="vehicle" data-category="motos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=80"
+                    alt="Kawasaki Ninja"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Kawasaki Ninja</h3>
+
+                    <p>
+                        Estilo deportivo, velocidad y tecnología.
+                    </p>
+
+                    <span>MOTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTO 5 -->
+            <div class="vehicle" data-category="motos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?auto=format&fit=crop&w=900&q=80"
+                    alt="Honda CRF"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Honda CRF</h3>
+
+                    <p>
+                        Diseñada para disfrutar la conducción
+                        fuera del asfalto.
+                    </p>
+
+                    <span>MOTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTO 6 -->
+            <div class="vehicle" data-category="motos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80"
+                    alt="Yamaha MT"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Yamaha MT</h3>
+
+                    <p>
+                        Una combinación de diseño, fuerza y agilidad.
+                    </p>
+
+                    <span>MOTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTO 1 -->
+            <div class="vehicle" data-category="autos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=900&q=80"
+                    alt="Toyota GR Supra"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Toyota GR Supra</h3>
+
+                    <p>
+                        Diseño deportivo y una experiencia
+                        de conducción emocionante.
+                    </p>
+
+                    <span>AUTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTO 2 -->
+            <div class="vehicle" data-category="autos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
+                    alt="Porsche 911"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Porsche 911</h3>
+
+                    <p>
+                        Elegancia, tecnología y carácter deportivo.
+                    </p>
+
+                    <span>AUTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTO 3 -->
+            <div class="vehicle" data-category="autos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80"
+                    alt="Mercedes AMG"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Mercedes-AMG</h3>
+
+                    <p>
+                        Lujo y rendimiento en un mismo vehículo.
+                    </p>
+
+                    <span>AUTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTO 4 -->
+            <div class="vehicle" data-category="autos">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80"
+                    alt="BMW M4"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>BMW M4</h3>
+
+                    <p>
+                        Potencia, precisión y diseño moderno.
+                    </p>
+
+                    <span>AUTOS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAMIONETA 1 -->
+            <div class="vehicle" data-category="camionetas">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80"
+                    alt="Ford Raptor"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Ford Raptor</h3>
+
+                    <p>
+                        Fuerza y capacidad para enfrentar
+                        diferentes terrenos.
+                    </p>
+
+                    <span>CAMIONETAS</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAMIONETA 2 -->
+            <div class="vehicle" data-category="camionetas">
+
+                <img
+                    src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80"
+                    alt="Range Rover Sport"
+                >
+
+                <div class="vehicle-info">
+
+                    <h3>Range Rover Sport</h3>
+
+                    <p>
+                        Comodidad, elegancia y capacidad todoterreno.
+                    </p>
+
+                    <span>CAMIONETAS</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =========================
-     CONTACTO
-========================= -->
+<!-- ================= SERVICIOS ================= -->
 
-<section
-    id="contacto"
-    class="contact-section"
->
+<section id="servicios" class="services-section">
 
-<div class="container">
+    <div class="container">
 
-    <h2 class="section-title">
-        CONTÁCTANOS
-    </h2>
+        <h2 class="section-title">
+            NUESTROS SERVICIOS
+        </h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>Mantenimiento</h3>
+
+                <p>
+                    Revisiones y mantenimiento para mantener
+                    tu vehículo en excelentes condiciones.
+                </p>
+
+            </div>
 
 
-    <div class="contact-box animar">
+            <div class="service-card">
 
-        <div class="contact-info">
+                <div class="service-icon">
+                    ⚙️
+                </div>
 
-            <h3>
-                ¿Tienes alguna pregunta?
-            </h3>
+                <h3>Repuestos</h3>
+
+                <p>
+                    Encuentra repuestos y accesorios para
+                    diferentes modelos de motos y vehículos.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🏍️
+                </div>
+
+                <h3>Asesoría</h3>
+
+                <p>
+                    Te ayudamos a encontrar el vehículo
+                    que mejor se adapte a tus necesidades.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🚗
+                </div>
+
+                <h3>Compra y venta</h3>
+
+                <p>
+                    Conoce nuestras opciones disponibles
+                    para comprar o vender vehículos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOSOTROS ================= -->
+
+<section id="nosotros" class="about-section">
+
+    <div class="container about-content">
+
+        <div class="about-text">
+
+            <h2 class="section-title">
+                SOBRE JT MOTORS
+            </h2>
 
             <p>
-                Comunícate con nosotros para recibir
-                información sobre nuestros vehículos
-                y servicios.
+                En JT MOTORS nos apasiona el mundo de los
+                vehículos. Nuestro objetivo es ofrecer
+                diferentes opciones de motos, autos y
+                camionetas para nuestros clientes.
             </p>
 
+            <p>
+                Trabajamos para brindar una atención cercana,
+                información clara y una experiencia sencilla
+                al momento de elegir un vehículo.
+            </p>
 
-            <div class="contact-item">
+            <div class="about-points">
 
-                <strong>
-                    Asesora:
-                </strong>
+                <div>
+                    ✓ Atención personalizada
+                </div>
 
-                <span>
-                    Vanessa Dantorres Carona
-                </span>
+                <div>
+                    ✓ Variedad de vehículos
+                </div>
+
+                <div>
+                    ✓ Información clara
+                </div>
+
+                <div>
+                    ✓ Servicio confiable
+                </div>
 
             </div>
-
-
-            <div class="contact-item">
-
-                <strong>
-                    Teléfono:
-                </strong>
-
-                <span>
-                    323 292 9252
-                </span>
-
-            </div>
-
-
-            <a
-                class="whatsapp-btn"
-                href="https://wa.me/573232929252"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                💬 ESCRIBIR POR WHATSAPP
-            </a>
 
         </div>
 
     </div>
 
-</div>
-
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= CONTACTO ================= -->
 
-<footer>
+<section id="contacto" class="contact-section">
 
-<div class="footer-content">
+    <div class="container">
 
-    <div class="footer-logo">
-        JT MOTORS
+        <h2 class="section-title">
+            CONTÁCTANOS
+        </h2>
+
+        <div class="contact-box">
+
+            <div class="contact-info">
+
+                <h3>
+                    ¿Tienes alguna pregunta?
+                </h3>
+
+                <p>
+                    Comunícate con nosotros para recibir
+                    información sobre nuestros vehículos
+                    y servicios.
+                </p>
+
+                <div class="contact-item">
+
+                    <strong>
+                        Asesora:
+                    </strong>
+
+                    <span>
+                        Vanessa Dantorres Carona
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>
+                        Teléfono:
+                    </strong>
+
+                    <span>
+                        323 292 9252
+                    </span>
+
+                </div>
+
+                <a
+                    class="whatsapp-btn"
+                    href="https://wa.me/573232929252"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    💬 ESCRIBIR POR WHATSAPP
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <p>
-        Potencia, estilo y libertad.
-    </p>
-
-
-    <div class="footer-links">
-
-        <a href="#inicio">
-            Inicio
-        </a>
-
-        <a href="#catalogo">
-            Catálogo
-        </a>
-
-        <a href="#servicios">
-            Servicios
-        </a>
-
-        <a href="#nosotros">
-            Nosotros
-        </a>
-
-        <a href="#contacto">
-            Contacto
-        </a>
-
-    </div>
-
-
-    <p class="copyright">
-        ©️ 2026 JT MOTORS.
-        Todos los derechos reservados.
-    </p>
-
-</div>
-
-</footer>
-
+</section>
 
 </main>
 
 
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+            JT MOTORS
+        </div>
+
+        <p>
+            Potencia, estilo y libertad.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#catalogo">
+                Catálogo
+            </a>
+
+            <a href="#servicios">
+                Servicios
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 JT MOTORS. Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
-
-/* =========================================
-   FILTROS DEL CATÁLOGO
-========================================= */
 
 const filters =
     document.querySelectorAll(".filter");
@@ -1707,29 +1296,24 @@ filters.forEach(filter => {
     filter.addEventListener("click", () => {
 
         filters.forEach(button => {
-
             button.classList.remove("active");
-
         });
 
-
         filter.classList.add("active");
-
 
         const category =
             filter.dataset.filter;
 
-
         vehicles.forEach(vehicle => {
 
-            if (
+            if(
                 category === "todos" ||
                 vehicle.dataset.category === category
-            ) {
+            ){
 
                 vehicle.style.display = "";
 
-            } else {
+            }else{
 
                 vehicle.style.display = "none";
 
@@ -1742,92 +1326,35 @@ filters.forEach(filter => {
 });
 
 
-/* =========================================
-   SCROLL SUAVE
-========================================= */
+/* SCROLL SUAVE */
 
 document
 .querySelectorAll('a[href^="#"]')
 .forEach(link => {
 
-    link.addEventListener(
-        "click",
-        function(event) {
+    link.addEventListener("click",function(event){
 
-            const target =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
+        const target =
+            document.querySelector(
+                this.getAttribute("href")
+            );
 
+        if(target){
 
-            if (target) {
+            event.preventDefault();
 
-                event.preventDefault();
-
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        }
-    );
-
-});
-
-
-/* =========================================
-   ANIMACIONES AL HACER SCROLL
-========================================= */
-
-const elementosAnimados =
-    document.querySelectorAll(
-        ".feature, .vehicle, .service-card, .about-text, .contact-box"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-
-        (entradas) => {
-
-            entradas.forEach(entrada => {
-
-                if (entrada.isIntersecting) {
-
-                    entrada.target
-                        .classList
-                        .add("visible");
-
-                }
-
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
             });
 
-        },
-
-        {
-            threshold: 0.15
         }
 
-    );
-
-
-elementosAnimados.forEach(elemento => {
-
-    elemento.classList.add("animar");
-
-    observer.observe(elemento);
+    });
 
 });
-
 
 </script>
 
-
 </body>
-
 </html>
-
-</section>
